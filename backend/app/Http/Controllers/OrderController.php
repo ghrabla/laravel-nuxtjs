@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index(){
       return Order::join('products', 'products.id', '=', 'orders.product_id')
       -> orderBy('created_at', 'desc')
-      ->get(['orders.*', 'products.name']);
+      ->get(['orders.*', 'products.name','products.slug','products.description','products.price']);
     }
 
 
