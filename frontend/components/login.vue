@@ -2,7 +2,7 @@
     <div class="m-8 bg-gray"> 
         <div class="lg:flex">
             <div class="lg:w-1/2 xl:max-w-screen-sm">
-                <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
+                <!-- <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                     <div class="cursor-pointer flex items-center">
                         <div>
                             <svg class="w-10 text-indigo-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 225 225" style="enable-background:new 0 0 225 225;" xml:space="preserve">
@@ -18,7 +18,7 @@
                         </div>
                         <div class="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">blockify</div>
                     </div>
-                </div>
+                </div> -->
                 <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                     <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">Log in</h2>
