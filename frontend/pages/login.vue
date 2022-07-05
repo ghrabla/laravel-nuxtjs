@@ -1,5 +1,7 @@
 <template>
     <div>
-        this is login page
+         <Navbar></Navbar>
+  <login></login>
+  <Footer></Footer>
     </div>
 </template>
