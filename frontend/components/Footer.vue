@@ -1,6 +1,6 @@
 <template>
     
-<footer class="footer-1 bg-white py-8 sm:py-12">
+<footer class="footer-1 bg-white py-8 sm:py-12 text-center">
   <div class="container mx-auto px-4">
     <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
       <div class="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
@@ -76,7 +76,7 @@
       </div>
       <div class="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
         <h5 class="text-xl font-bold mb-6 sm:text-center xl:text-left">Stay connected</h5>
-        <div class="flex sm:justify-center xl:justify-start">
+        <div class="flex justify-center ">
           <a href="" class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-600 hover:text-white hover:bg-blue-600 hover:border-blue-600">
             <i class="fab fa-facebook"></i>
           </a>
@@ -84,7 +84,7 @@
             <i class="fab fa-twitter"></i>
           </a>
           <a href="" class="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 ml-2 text-gray-600 hover:text-white hover:bg-red-600 hover:border-red-600">
-            <i class="fab fa-google-plus-g"></i>
+            <i class="fab fa-linkedin"></i>
           </a>
         </div>
       </div>
@@ -115,6 +115,6 @@
 
 </template>
 
-<script setup>
-
+<script >
+  
 </script>

@@ -1,7 +1,9 @@
 <template>
     <div>
-         <Navbar></Navbar>
-        <about></about>
+
+        <Navbar></Navbar>
+        <services></services>
        <Footer></Footer>
+
     </div>
 </template>
