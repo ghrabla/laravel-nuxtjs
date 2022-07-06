@@ -1,7 +1,4 @@
 <template>
-
-
-
    <div>
       <div class="bg-gray-100 container px-5 py-20 mx-auto ">
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 text-center">Contact Us</h1>
@@ -58,7 +55,7 @@
     </div>
   </div>
 </section> 
-       </div>
-    </div>
-   </div>
+</div>
+</div>
+</div>
 </template>

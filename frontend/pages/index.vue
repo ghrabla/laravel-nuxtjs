@@ -2,7 +2,7 @@
   <!-- <NuxtLogo/> -->
   <div>
    <Navbar></Navbar>
-  <Tutorial></Tutorial>
+  <home></home>
   <Footer></Footer>
   </div>
 </template>
