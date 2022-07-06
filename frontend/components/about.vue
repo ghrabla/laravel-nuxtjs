@@ -7,10 +7,10 @@
 <!--Hero
 style="background: linear-gradient(90deg, #2b4554 0%, #767ba2 100%)"
 -->
-  <div class="py-20 bg-cover bg-no-repeat bg-fixed" style="background-image: url(https://media.vanityfair.com/photos/5ce426151c0b0773cacd1121/master/pass/star-wars-feature-vf-2019-summer-embed-05.jpg)">
+  <div class="py-20 bg-cover bg-no-repeat bg-fixed" id="backimg">
     <div class="container m-auto text-center px-6 opacity-100">
       <h2 class="text-4xl font-bold mb-2 text-white">Echo Base...I've got something!</h2>
-      <h3 class="text-2xl mb-8 text-gray-200">Not much, but it could be a life form. This is Rouge Two. this is Rouge Two. Captain Solo, so you copy?</h3>
+      <h3 class="text-2xl mb-8 text-white-700 font-bold">Not much, but it could be a life form. This is Rouge Two. this is Rouge Two. Captain Solo, so you copy?</h3>
       <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800">Commander Skywalker, do you copy?</button>
     </div>
   </div>
@@ -24,12 +24,12 @@ style="background: linear-gradient(90deg, #2b4554 0%, #767ba2 100%)"
               <p class="text-gray-600 mb-8">Their primary target will be the power generators. Prepare to open the shield. Sir, Rebel ships are coming into our sector. Good. Our first catch of the day. Stand by, ion control....Fire! The first transport is away.</p>
             </div>
             <div class="w-full md:w-1/2">
-              <img class="rounded-lg" src="https://pbs.twimg.com/media/CR45LOXVEAADG5E.jpg" alt="Vortex" />
+              <img class="rounded-lg" src="~/assets/staticimg/3d-house-with-solar-pannels.jpg" alt="Vortex" />
             </div>
           </div>
           <div class="flex items-center flex-wrap mb-20">
             <div class="w-full md:w-1/2">
-              <img class="rounded-lg" src="https://www.thesun.co.uk/wp-content/uploads/2019/06/SWJFO-EAPlay-08-1.jpg" alt="use the force" />
+              <img class="rounded-lg" src="..\assets\staticimg\solar-cell-farm-power-station-alternative-energy-from-sun.jpg" alt="use the force" />
             </div>
             <div class="w-full md:w-1/2 pl-10">
               <h4 class="text-3xl text-gray-800 font-bold mb-3">Use the Force!</h4>
@@ -42,7 +42,7 @@ style="background: linear-gradient(90deg, #2b4554 0%, #767ba2 100%)"
               <p class="text-gray-600 mb-8">There is no try. I can't. It's too big. Size matters not. Look at me. Judge me by my size, do you? Hm? Mmmm. And well you should not. For my ally in the Force. And a powerful ally it is.</p>
             </div>
             <div class="w-full md:w-1/2">
-              <img class="rounded-lg" src="https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Ferikkain%2Ffiles%2F2018%2F01%2FRey-Luke.jpg" alt="Syncing" />
+              <img class="rounded-lg" src="..\assets\staticimg\man-worker-firld-by-solar-panels.jpg" alt="Syncing" />
             </div>
           </div>
         </section>
@@ -88,3 +88,13 @@ style="background: linear-gradient(90deg, #2b4554 0%, #767ba2 100%)"
       </body>
     </div>
 </template>
+
+
+<style scoped>
+   #backimg{
+     background-image: url('../assets/staticimg/3d-house-with-solar-pannels (1).jpg');
+     /* background-repeat: no-repeat;
+     background: fixed;
+     background-size: cover; */
+   }
+</style>
