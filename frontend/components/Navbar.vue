@@ -53,6 +53,7 @@
       </li>
     </ul>
   </div>
+  <div @click="version()">click me</div>
   </div>
 </nav>
 </div>
@@ -60,8 +61,11 @@
 
 
 <script setup>
-  
    
+    const version = function(){
+      let versio= true;
+      console.log(versio);
+    }
 
 
 </script>
