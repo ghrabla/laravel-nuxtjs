@@ -6,6 +6,7 @@
       <li v-for="(mountain, index) in mountains" :key="index">
         {{ mountain.title }}
       </li>
+      <button @click="refresh">Refresh</button>
     </ul>
   </div>
 </template>
@@ -20,6 +21,11 @@
       this.mountains = await fetch(
         'https://api.nuxtjs.dev/mountains'
       ).then(res => res.json())
+    },
+     methods: {
+      refresh() {
+        this.$nuxt.refresh()
+      }
     }
   }
 </script>
