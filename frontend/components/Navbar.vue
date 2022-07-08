@@ -53,7 +53,6 @@
       </li>
     </ul>
   </div>
-  <div @click="version()">click me</div>
   </div>
 </nav>
 </div>
