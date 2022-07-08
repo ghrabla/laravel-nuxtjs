@@ -2,7 +2,7 @@
     <div>
 
         <Navbar></Navbar>
-        <services></services>
+        <events></events>
        <Footer></Footer>
 
     </div>

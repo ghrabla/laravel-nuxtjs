@@ -4,8 +4,7 @@
   <div class="container flex flex-wrap justify-between items-center mx-auto">
   <Nuxtlink to="/">
   <a href="javascript:void(0)" class="flex items-center" aria-current="page">
-      <img src="/docs/images/logo.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FCES MAROC</span>
+      <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white ml-4">FCES MAROC</span>
   </a>
   </NuxtLink>
   <div class="flex md:order-2">
@@ -30,8 +29,8 @@
         </NuxtLink>
       </li>
       <li>
-          <NuxtLink to="/services">
-        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+          <NuxtLink to="/events">
+        <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Events</a>
         </NuxtLink>
       </li>
       <li>
