@@ -3,6 +3,7 @@
     <p v-if="$fetchState.pending">Loading....</p>
     <p v-else-if="$fetchState.error">Error while fetching mountains</p>
     <ul v-else>
+      <div>{{mountains}}</div>
       <li v-for="(mountain, index) in mountains" :key="index">
         {{ mountain.title }}
       </li>
