@@ -13,7 +13,7 @@
              <h2 class="font-bold text-xl text-center">make solars</h2>
              <p class="text-center">we work on s service from a long time  </p>
            </div>
-            <div class="text-center">
+            <div class="text-center border-solid border-r-2 border-l-2 border-black-800 lg:px-10 px-0">
                 <div class="lg:ml-0 ml-20 mt-10 lg:mt-0">
                   <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_sl6vuo6t.json"  background="transparent"  speed="1"  style="width: 300px; height: 200px;"  loop autoplay></lottie-player>
                 </div>

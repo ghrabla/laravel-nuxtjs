@@ -4,8 +4,8 @@
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900 text-center">Contact Us</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-center">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify.</p>
        <div class="lg:flex">
-            <section>
-        <div class="responsive-map container px-1 py-20 mx-auto ">
+        <section>
+        <div class="responsive-map container px-1 py-20 mx-auto">
             <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=fces maroc&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.kokagames.com/fnf-friday-night-funkin-mods/">FNF</a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:600px;height:400px;}.gmap_iframe {width:600px!important;height:400px!important;}</style></div>
        </div>
       </section>

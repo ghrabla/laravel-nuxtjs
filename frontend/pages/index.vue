@@ -4,6 +4,8 @@
    <Navbar></Navbar>
   <home></home>
   <Header></Header>
+  <Gallery></Gallery>
+  <emailsub></emailsub>
   <Footer></Footer>
   </div>
 </template>
