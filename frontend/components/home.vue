@@ -12,10 +12,6 @@
         </button>
         </div>
         </div>
-    
-        <div class="">  
-          hi there     
-        </div> 
     </div>
 </template>
 
