@@ -18,7 +18,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { hid: 'fontawesome', src: 'https://kit.fontawesome.com/a9441c7460.js', defer: true }
+      { hid: 'fontawesome', src: 'https://kit.fontawesome.com/a9441c7460.js', defer: true },
+      { hid: 'lottiefiles', src: 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', defer: true },
     ]
 
   },
