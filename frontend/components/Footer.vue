@@ -1,5 +1,4 @@
-<template>
-    
+<template>  
 <footer class="footer-1 bg-white py-8 sm:py-12 text-center">
   <div class="container mx-auto px-4">
     <div class="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
