@@ -38,7 +38,7 @@
                   <div class="mt-20">
                       <h1 class=" text-2xl font-bold text-center">FCES MAROC FOR YOUR BUSINESS</h1>
                       <p class="text-center">let's make the world more clean by using this good things</p>
-                   <button class="ml-40 mt-5 bg-transparent hover:bg-transparent hover:border-transparent text-white font-semibold hover:text-white  hover:bg-blue-700 py-2 px-4 border  border-blue-700 rounded">
+                   <button class="ml-40 mt-5 mb-20 bg-transparent hover:bg-transparent hover:border-transparent text-white font-semibold hover:text-white  hover:bg-blue-700 py-2 px-4 border  border-blue-700 rounded">
                      Get In Touch <i class="fa-solid fa-arrow-right"></i>
                      </button>
                   </div>
