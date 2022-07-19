@@ -70,9 +70,7 @@ export default {
 </script>
 
 <style>
-html {
-	background: #efefef;
-}
+
 
 .fade-enter-active,
 .fade-leave-active {
