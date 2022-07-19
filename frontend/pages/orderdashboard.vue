@@ -1,5 +1,5 @@
 <template>
     <div>
-      <sidebar></sidebar>  
+      <Sidebaradmin></Sidebaradmin>  
     </div>
 </template>
