@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
     <div id="app">
       <Sidebaradmin></Sidebaradmin>  
       <users></users>  

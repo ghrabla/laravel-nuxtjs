@@ -1,15 +1,15 @@
 <template>
     
-		<div class="fixed inset-0 flex z-40">
+		<div class="">
 			<div class="absolute flex top-0 h-screen z-20" :class="[right ? 'right-0 flex-row' : 'left-0 flex-row-reverse']">
 				<button @click="toggle()" class="w-12 h-10 mt-2  rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300">
 					<span class="block transform origin-center font-bold">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</span>
 				</button>
-				<div ref="content" class="transition-all duration-700 bg-white overflow-hidden flex items-center justify-center" 
+				<div  class="transition-all duration-700 bg-white overflow-hidden flex items-center justify-center" 
 				:class="[open ? 'max-w-lg' : 'max-w-0']"
-				>
+				id="sidebar" >
 					<div class="w-48 ml-5 text-blue-900	 flex flex-col">
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
 						<NuxtLink to="/">
@@ -56,6 +56,14 @@
 		
 </template>
 
+<style scoped>
+   #sidebar{
+	   /* background-color: rgb(176, 174, 174) !important; */
+	   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   }
+</style>
+
+
 <script>
 export default {
 	data() {
@@ -69,6 +77,7 @@ export default {
 		toggle() {
 			this.open = !this.open;
 		}
+		
 	}
 };
 </script>
