@@ -1,6 +1,5 @@
 <template>
-    <div>
-	<div id="app">
+    
 		<div class="fixed inset-0 flex z-40">
 			<div class="absolute flex top-0 h-screen z-20" :class="[right ? 'right-0 flex-row' : 'left-0 flex-row-reverse']">
 				<button @click="toggle()" class="w-12 h-48 p-1 mt-10 rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300">
@@ -12,12 +11,34 @@
 				:class="[open ? 'max-w-lg' : 'max-w-0']"
 				>
 					<div class="w-48 ml-5 text-blue-900	 flex flex-col">
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fas fa-chart-bar"></i> Products</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fas fa-bell"></i> Orders</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-user" aria-hidden="true"></i> Users</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-address-book" aria-hidden="true"></i> Contacts</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+						<NuxtLink to="/">
+							<i class="fa fa-home" aria-hidden="true"></i> Home
+						</NuxtLink>
+						</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+						<NuxtLink to="/productdashboard">
+							<i class="fas fa-chart-bar"></i> Products
+						</NuxtLink>
+						</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+						<NuxtLink to="/orderdashboard">
+							<i class="fas fa-bell"></i> Orders
+						</NuxtLink>
+						</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+						<NuxtLink to="/users">
+							<i class="fa fa-user" aria-hidden="true"></i> Users
+						</NuxtLink>
+						</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+						<NuxtLink to="/message">
+							<i class="fa fa-address-book" aria-hidden="true"></i> Contacts
+						</NuxtLink>
+						</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+						</a>
 					</div>
 				</div>
 			</div>
@@ -32,12 +53,7 @@
 			</transition>
 		</div>
 
-		<!-- Page Content -->
-		<div class="absolute inset-1/2 rounded bg-green-500 w-1/2 h-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center text-white">
-			Page Content 
-		</div>
-	</div>
-	</div>
+		
 </template>
 
 <script>

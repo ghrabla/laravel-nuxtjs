@@ -2,7 +2,7 @@
     <div>
     <div id="app">
       <Sidebaradmin></Sidebaradmin>  
-      <orderdashboard></orderdashboard>  
+      <message></message>  
     </div>
     </div>
 </template>

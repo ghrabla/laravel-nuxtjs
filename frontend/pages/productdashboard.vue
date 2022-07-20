@@ -1,5 +1,9 @@
 <template>
     <div>
-      <Sidebaradmin></Sidebaradmin>  
+    <div id="app">
+      <Sidebaradmin></Sidebaradmin> 
+      <productdashboard></productdashboard> 
+      </div>
+	   <!-- </div>  -->
     </div>
 </template>
