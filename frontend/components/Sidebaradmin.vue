@@ -8,10 +8,17 @@
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</span>
 				</button>
-				<div ref="content" class="transition-all duration-700 bg-yellow-200 overflow-hidden flex items-center justify-center" 
+				<div ref="content" class="transition-all duration-700 bg-white overflow-hidden flex items-center justify-center" 
 				:class="[open ? 'max-w-lg' : 'max-w-0']"
 				>
-					<div class="w-48 text-center font-bold text-xl">Sidebar</div>
+					<div class="w-48 ml-5 text-blue-900	 flex flex-col">
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fas fa-chart-bar"></i> Products</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fas fa-bell"></i> Orders</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-user" aria-hidden="true"></i> Users</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-address-book" aria-hidden="true"></i> Contacts</a>
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 "><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+					</div>
 				</div>
 			</div>
 
@@ -27,7 +34,7 @@
 
 		<!-- Page Content -->
 		<div class="absolute inset-1/2 rounded bg-green-500 w-1/2 h-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center text-white">
-			Page Content
+			Page Content 
 		</div>
 	</div>
 	</div>
