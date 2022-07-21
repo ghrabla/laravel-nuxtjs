@@ -2,7 +2,7 @@
     
 		<div class="">
 			<div class="absolute flex top-0 h-screen z-20" :class="[right ? 'right-0 flex-row' : 'left-0 flex-row-reverse']">
-				<button @click="toggle()" class="w-12 h-10 mt-2  rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300">
+				<button @click="toggle()" class="w-12 h-10 mt-5  rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300">
 					<span class="block transform origin-center font-bold">
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</span>

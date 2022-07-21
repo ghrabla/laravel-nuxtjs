@@ -1,11 +1,9 @@
 <template>
     <!-- Page Content -->
-		<div class="mt-5">
-			<search-profile></search-profile>
-            <!-- <div class=""> -->
-			<statistic></statistic>
+		<div class="">
+			
             <!-- </div> -->
-            <div class="container mx-auto px-4 sm:px-8">
+  <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
     <div>
       <p class="text-xl font-semibold leading-tight flex lg:justify-end justify-center">

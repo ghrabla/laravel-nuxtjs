@@ -2,7 +2,7 @@
     <div class="">
         <div class="flex justify-around lg:flex-row flex-col">
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
-                <div class="text-yellow-600">
+                <div class="text-purple-900">
                   <i class="fa fa-users fa-3x" aria-hidden="true"></i>
                 </div>
                 <div class="ml-4">
