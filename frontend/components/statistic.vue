@@ -1,13 +1,13 @@
 <template>
     <div class="">
         <div class="flex justify-around lg:flex-row flex-col">
-            <div class="flex mt-10 px-7 py-5 rounded  " id="box-sta">
-                <div class="text-gray-800">
+            <div class="flex mt-10 px-7 py-5 rounded " id="box-sta">
+                <div class="text-yellow-600">
                   <i class="fa fa-users fa-3x" aria-hidden="true"></i>
                 </div>
                 <div class="ml-4">
-                  <span class="font-bold text-xl">Total users</span> 
-                  <p class="font-bold">27</p>
+                  <span class="font-bold ">Total users</span> 
+                  <p class="font-bold text-xl">27</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded " id="box-sta">

@@ -8,7 +8,7 @@
             <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
     <div>
-      <h2 class="text-2xl font-semibold leading-tight">Invoices</h2>
+      <h2 class="text-2xl font-semibold leading-tight">Websites users table</h2>
     </div>
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div
@@ -20,17 +20,17 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Client / Invoice
+                Client / Id
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Amount
+                Email
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Issued / Due
+                Createdat / Due
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -62,8 +62,8 @@
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$20,000</p>
-                <p class="text-gray-600 whitespace-no-wrap">USD</p>
+                <!-- <p class="text-gray-900 whitespace-no-wrap">$20,000</p> -->
+                <p class="text-gray-600 whitespace-no-wrap">louay@gmail.com</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">Sept 28, 2019</p>
@@ -77,7 +77,7 @@
                     aria-hidden
                     class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                   ></span>
-                  <span class="relative">Paid</span>
+                  <span class="relative">Online</span>
                 </span>
               </td>
               <td
@@ -117,8 +117,8 @@
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$214,000</p>
-                <p class="text-gray-600 whitespace-no-wrap">USD</p>
+                <!-- <p class="text-gray-900 whitespace-no-wrap">$214,000</p> -->
+                <p class="text-gray-600 whitespace-no-wrap">louay@gmail.com</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">Sept 25, 2019</p>
@@ -132,7 +132,7 @@
                     aria-hidden
                     class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                   ></span>
-                  <span class="relative">Paid</span>
+                  <span class="relative">Online</span>
                 </span>
               </td>
               <td
@@ -172,8 +172,8 @@
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$20,000</p>
-                <p class="text-gray-600 whitespace-no-wrap">USD</p>
+                <!-- <p class="text-gray-900 whitespace-no-wrap">$20,000</p> -->
+                <p class="text-gray-600 whitespace-no-wrap">louay@gmail.com</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">Sept 14, 2019</p>
@@ -227,8 +227,8 @@
                 </div>
               </td>
               <td class="px-5 py-5 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$12,000</p>
-                <p class="text-gray-600 whitespace-no-wrap">USD</p>
+                <!-- <p class="text-gray-900 whitespace-no-wrap">$12,000</p> -->
+                <p class="text-gray-600 whitespace-no-wrap">louay@gmail.com</p>
               </td>
               <td class="px-5 py-5 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">Sept 6, 2019</p>
@@ -244,7 +244,7 @@
                     aria-hidden
                     class="absolute inset-0 bg-red-200 opacity-50 rounded-full"
                   ></span>
-                  <span class="relative">Overdue</span>
+                  <span class="relative">Offline</span>
                 </span>
               </td>
               <td class="px-5 py-5 bg-white text-sm text-right">
