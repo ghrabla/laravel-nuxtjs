@@ -7,3 +7,12 @@
 
     </div>
 </template>
+
+<script setup>
+    export default{
+      head:{
+        title: "events page"
+       
+      }
+    }
+</script>
