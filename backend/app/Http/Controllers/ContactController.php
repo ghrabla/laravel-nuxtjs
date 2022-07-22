@@ -45,5 +45,9 @@ class ContactController extends Controller
       return Contact::destroy($id);
     }
 
+    public function search($fullname){
+        return Contact::where('fullname','like','%'.$fullname.'%')->get();
+    }
+
 
 }

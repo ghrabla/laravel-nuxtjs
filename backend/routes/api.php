@@ -35,6 +35,7 @@ Route::post('/contacts',[ContactController::class,'store']);
 Route::get('/contacts/{id}',[ContactController::class,'show']);
 Route::put('/contacts/{id}',[ContactController::class,'Update']);
 Route::delete('/contacts/{id}',[ContactController::class,'destroy']);
+Route::get('/contacts/search/{fullname}',[ContactController::class,'search']);
 
 // orders router
 Route::get('/orders',[OrderController::class,'index']);
@@ -46,6 +47,11 @@ Route::delete('/orders/{id}',[OrderController::class,'destroy']);
 // users router
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
+Route::get('/users',[AuthController::class,'index']);
+Route::get('/users/{id}',[AuthController::class,'show']);
+Route::put('/users/{id}',[AuthController::class,'Update']);
+Route::delete('/users/{id}',[AuthController::class,'destroy']);
+Route::get('/users/search/{name}',[AuthController::class,'search']);
 
 // product router
 Route::get('/products',[ProductController::class,'index']);

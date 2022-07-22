@@ -69,4 +69,29 @@ class AuthController extends Controller
             'message' => 'Logged out'
         ];
     }
+
+    public function index(){
+
+        return User::all();
+    }
+
+    public function show($id){
+        return User::find($id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //
+        $product = User::find($id);
+        $product->Update($request->all());
+        return $product;
+    }
+
+    public function destroy($id){
+        return User::destroy($id);
+    }
+
+    public function search($fullname){
+        return User::where('name','like','%'.$fullname.'%')->get();
+    }
 }
