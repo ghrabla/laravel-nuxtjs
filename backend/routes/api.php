@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ContactController;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -26,6 +27,10 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('products', ProductController::class);
 
 // public routes
+
+// contact routes
+
+Route::get('/contacts',[ContactController::class,'index']);
 
 // orders router
 Route::get('/orders',[OrderController::class,'index']);
