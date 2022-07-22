@@ -31,6 +31,10 @@ use Illuminate\Support\Facades\Route;
 // contact routes
 
 Route::get('/contacts',[ContactController::class,'index']);
+Route::post('/contacts',[ContactController::class,'store']);
+Route::get('/contacts/{id}',[ContactController::class,'show']);
+Route::put('/contacts/{id}',[ContactController::class,'Update']);
+Route::delete('/contacts/{id}',[ContactController::class,'destroy']);
 
 // orders router
 Route::get('/orders',[OrderController::class,'index']);
