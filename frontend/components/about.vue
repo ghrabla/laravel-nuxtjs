@@ -1,12 +1,6 @@
 <template>
     <div class="bg-gray-100 ">
         <body class="text-gray-700 bg-white antialiased" style="font-family: 'Roboto', sans-serif">
-  
-
-        
-<!--Hero
-style="background: linear-gradient(90deg, #2b4554 0%, #767ba2 100%)"
--->
   <div class="py-20 bg-cover bg-no-repeat bg-fixed " id="backimg">
     <div class="container m-auto text-center px-6 opacity-100">
       <h2 class="text-4xl font-bold mb-2 text-white">Echo Base...I've got something!</h2>
