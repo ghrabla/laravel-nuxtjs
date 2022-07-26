@@ -7,7 +7,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total users</span> 
-                  <p class="font-bold text-xl">20</p>
+                  <p class="font-bold text-xl">51</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
