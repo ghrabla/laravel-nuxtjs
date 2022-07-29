@@ -2,8 +2,8 @@
   <div>
  
   <div class="container mx-auto mt-10 ">
-    <div class="flex my-10">
-      <div class="w-3/4 bg-white px-10 py-10">
+    <div class="flex lg:flex-row flex-col my-10">
+      <div class="lg:w-3/4 w-full bg-white px-10 py-10">
         <div class="flex justify-between border-b pb-8">
           <h1 class="font-semibold text-2xl">Shopping Cart</h1>
           <h2 class="font-semibold text-2xl">3 Items</h2>
@@ -45,7 +45,7 @@
         </a>
       </div>
 
-      <div id="summary" class="w-1/4 px-8 py-10">
+      <div id="summary" class="lg:w-1/4 w-full px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
           <span class="font-semibold text-sm uppercase">Items 3</span>

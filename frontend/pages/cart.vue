@@ -1,16 +1,16 @@
 <template>
   <div>
-      <navbar></navbar>
-      <panier></panier>
+      <Navbar></Navbar>
+      <Panier></Panier>
       <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from '../components/Footer.vue'
-import Panier from '../components/panier.vue'
 export default {
-  components: { Footer, Panier },
+   head:{
+       title:"shop carts"
+   }
 
 }
 </script>
