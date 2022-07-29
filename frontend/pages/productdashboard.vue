@@ -1,6 +1,7 @@
 <template>
     <div>
     <div class="mt-5" id="app">
+      
       <Sidebaradmin></Sidebaradmin> 
       <search-profile></search-profile>
 			<statistic></statistic>

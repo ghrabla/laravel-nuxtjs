@@ -1,6 +1,5 @@
 <template>
   <div>
- 
   <div class="container mx-auto mt-10 ">
     <div class="flex lg:flex-row flex-col my-10">
       <div class="lg:w-3/4 w-full bg-white px-10 py-10">
@@ -28,9 +27,7 @@
           <div class="flex justify-center w-1/5">
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
             </svg>
-
             <input class="mx-2 border text-center w-8" type="text" value="1">
-
             <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
               <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
             </svg>
@@ -45,7 +42,6 @@
         </a>
         </NuxtLink >
       </div>
-
       <div id="summary" class="lg:w-1/4 w-full px-8 py-10">
         <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div class="flex justify-between mt-10 mb-5">
@@ -71,20 +67,15 @@
           <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
         </div>
       </div>
-
     </div>
   </div>
-
-
   </div>
 </template>
-
 <script>
 export default {
 
 }
 </script>
-
 <style>
 
 </style>
