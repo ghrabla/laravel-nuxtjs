@@ -46,7 +46,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="n in 5" :key="n">
+            <tr v-for="n in ns" :key="n">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
                   <div class="flex-shrink-0 w-10 h-10">
@@ -86,7 +86,7 @@
               <td
                 class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
               >
-                <button
+                <button @click="showfun(n)" v-if="showaction!=n"
                   type="button"
                   class="inline-block text-gray-500 hover:text-gray-700"
                 >
@@ -99,14 +99,21 @@
                     />
                   </svg>
                 </button>
+                <button class="font-bold text-xl" v-if="showaction==n" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
+              <div class="flex flex-col gap-3" v-if="showaction==n">
+                  <button class="text-green-500 font-bold"><i class="fas fa-edit"></i> Update {{n}}</button>
+                  <button class="text-red-500 font-bold"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+              </div> 
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-</div></div>
+</div>
+
+</div>
 		
 	
 </template>
@@ -115,11 +122,19 @@
 
  export default{
    inject:['show'],
-  //  provide(){
-  //    return{
-  //      show: false
-  //    }
-  //  }
+   data(){
+     return{
+       showaction: false,
+       ns: 5,
+       n : ''
+     }
+   },
+   methods :{
+     showfun(num){
+       this.showaction = num;
+      //  this.showaction = !this.showaction;
+     }
+   }
  }
 
 </script>
