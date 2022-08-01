@@ -10,11 +10,17 @@
     </div>
 </template>
 
-<script setup>
+<script >
     export default{
       head:{
         title: "products dashboard"
+      },
        
-      }
+    provide() {
+       return {
+         show: false
+       }
     }
+}
+    
 </script>
