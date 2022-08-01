@@ -33,6 +33,9 @@ class ProductController extends Controller
         $request->validate([
             'name' => 'required',
             'slug' => 'required',
+            'type' => 'required',
+            'quantity' => 'required',
+            'picture' => 'required',
             'description' => 'required',
             'price' => 'required',
         
