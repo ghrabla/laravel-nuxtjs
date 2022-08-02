@@ -8,7 +8,7 @@
     </div>
     </div>
 </template>
-<script setup>
+<script >
     export default{
       head:{
         title: "orders dashboard"
