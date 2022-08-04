@@ -1,70 +1,32 @@
 <template>
   <div>
-    <input type="text" @keyup.enter="addTodo" placeholder="What needs to be done?">
-    <ul>
-      <li v-for="todo in todos" :key="todo.id">
-        <input :checked="todo.done" @change="toggle(todo)" type="checkbox" :id="todo.id">
-        <label :class="{ done: todo.done }" :for="todo.id">{{ todo.text }}</label>
-        <button @click="removeTodo(todo)">remove</button>
-      </li>
-    </ul>
+    <p v-if="$fetchState.pending">Fetching products...</p>
+    <p v-else-if="$fetchState.error">An error occurred </p>
+    <div v-else>
+      <h1>Nuxt products</h1>
+      <ul>
+        <li v-for="product of products" :key="product.id">{{ product.name }}</li>
+      </ul>
+      <button @click="$fetch">Refresh</button>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
-
-export default {
-  computed: {
-    todos () {
-      return this.$store.state.todos.list
-    }
-  },
-  methods: {
-    addTodo (event) {
-      this.$store.commit('todos/add', event.target.value)
-      event.target.value = ''
+  export default {
+    data() {
+      return {
+        products: ['kamal']
+      }
     },
-    ...mapMutations({
-      toggle: 'todos/toggle'
-    }),
-    removeTodo (todo){
-      this.$store.commit('todos/remove', todo)
+    async fetch() {
+      this.products = await fetch(
+        'http://localhost:8000/api/products'
+      ).then(res => res.json())
+      // console.log(this.product)
+    },
+    mounted(){
+      console.log(this.products);
     }
   }
-}
 </script>
-
-<style scoped>
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-ul {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-input[type="checkbox"] {
-  margin: 0.5rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-}
-
-.done {
-  text-decoration: line-through;
-}
-</style>

@@ -83,6 +83,27 @@
     </div>
 </template>
 
+<script>
+// import axios from '@nuxtjs/axios';
+   export default {
+    //  data(){
+    //    return{
+
+    //    }
+    //  },
+     mounted(){
+       console.log('kamla')
+     }
+//     methods: {
+//   async fetchSomething() {
+//     const ip = await this.$axios.$get('http://icanhazip.com')
+//     this.ip = ip
+//     console.log(this.ip);
+//   }
+// }
+   }
+</script>
+
 
 <style scoped>
    #backimg{
