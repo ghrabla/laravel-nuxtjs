@@ -2,7 +2,7 @@
   <div>
       <Navbar></Navbar>
       <Panier></Panier>
-      <Footer></Footer>
+      <!-- <Footer></Footer> -->
   </div>
 </template>
 

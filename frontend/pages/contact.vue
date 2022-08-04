@@ -2,7 +2,7 @@
     <div>
         <Navbar></Navbar>
         <contact></contact>
-        <Footer></Footer>
+        <!-- <Footer></Footer> -->
      </div>
 </template>
 

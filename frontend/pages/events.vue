@@ -3,7 +3,7 @@
 
         <Navbar></Navbar>
         <events></events>
-       <Footer></Footer>
+       <!-- <Footer></Footer> -->
 
     </div>
 </template>

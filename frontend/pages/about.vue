@@ -2,7 +2,7 @@
     <div>
          <Navbar></Navbar>
         <about></about>
-       <Footer></Footer>
+       <!-- <Footer></Footer> -->
     </div>
 </template>
 <script >
