@@ -1,7 +1,10 @@
 <?php
 // use App\Models\Product;
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
+// use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactController;
 use App\Models\Order;
@@ -44,6 +47,11 @@ Route::post('/orders',[OrderController::class,'store']);
 Route::put('/orders/{id}',[OrderController::class,'Update']);
 Route::delete('/orders/{id}',[OrderController::class,'destroy']);
 
+
+// admins routes 
+Route::post('/adminregister',[AdminController::class,'register']);
+Route::post('/adminlogin',[AdminController::class,'login']);
+
 // users router
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
@@ -58,12 +66,13 @@ Route::get('/products',[ProductController::class,'index']);
 Route::get('/products/{id}',[ProductController::class,'show']);
 Route::get('/products/search/{name}',[ProductController::class,'search']);
 
-// protected route
+// protected routes
 Route::group(['middleware' => ['auth:sanctum']],function(){
   Route::post('/products',[ProductController::class,'store']);
   Route::put('/products/{id}',[ProductController::class,'update']); 
   Route::delete('/products/{id}',[ProductController::class,'destroy']);
   Route::post('/logout',[AuthController::class,'logout']);
+  Route::post('/adminlogout',[AdminController::class,'logout']);
 
 
 });
