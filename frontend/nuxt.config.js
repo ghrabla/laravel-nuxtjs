@@ -50,7 +50,10 @@ export default {
   // },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/auth-next',
+    '@nuxtjs/axios'
+],
 
   // hi ilyass
 
