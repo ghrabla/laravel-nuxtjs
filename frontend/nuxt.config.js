@@ -58,7 +58,17 @@ export default {
   // hi ilyass
 
   axios: {
-    baseURL: 'http://localhost:8000', // Used as fallback if no runtime config is provided
+    credentials: true, // Used as fallback if no runtime config is provided
+  },
+
+
+  auth: {
+    strategies: {
+      laravelSanctum: {
+        provider: 'laravel/sanctum',
+        url: 'http://localhost:8000',
+      },
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
