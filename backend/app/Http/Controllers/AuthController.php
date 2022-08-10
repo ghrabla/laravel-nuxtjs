@@ -66,7 +66,7 @@ class AuthController extends Controller
         $request->user()->tokens()->delete();
 
         return [
-            'message' => 'Logged out'
+            'message' => 'Logged out '
         ];
     }
 
