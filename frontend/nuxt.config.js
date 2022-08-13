@@ -58,7 +58,8 @@ export default {
   // hi ilyass
 
   axios: {
-    credentials: true, // Used as fallback if no runtime config is provided
+    // credentials: true, // Used as fallback if no runtime config is provided
+    baseURL: "http://localhost:8000"
   },
 
 
