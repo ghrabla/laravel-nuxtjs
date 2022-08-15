@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    //
+    // without confirmation 
     public function register(Request $request){
        $fields = $request->validate( [
         'name' => 'required|string',
