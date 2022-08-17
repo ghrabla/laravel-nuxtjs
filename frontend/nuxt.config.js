@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'frontend',
+    title: 'Fces maroc ',
     htmlAttrs: {
       lang: 'en'
     },
@@ -39,13 +39,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
-
+    '@nuxtjs/auth-next',
+    '@nuxtjs/axios'
   ],
 
-  axios :{
-     baseURL : "http://localhost:8000"
+
+  axios: {
+    // credentials : true,
+    baseURL: "http://localhost:8000",
+  
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

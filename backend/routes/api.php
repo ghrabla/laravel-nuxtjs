@@ -52,7 +52,7 @@ Route::delete('/orders/{id}',[OrderController::class,'destroy']);
 Route::post('/adminregister',[AdminController::class,'register']);
 Route::post('/adminlogin',[AdminController::class,'login']);
 
-// users router
+// users routes
 Route::post('/register',[AuthController::class,'register']);
 Route::post('/login',[AuthController::class,'login']);
 Route::get('/users',[AuthController::class,'index']);
@@ -61,7 +61,7 @@ Route::put('/users/{id}',[AuthController::class,'Update']);
 Route::delete('/users/{id}',[AuthController::class,'destroy']);
 Route::get('/users/search/{name}',[AuthController::class,'search']);
 
-// product router
+// product routes
 Route::get('/products',[ProductController::class,'index']);
 Route::get('/products/{id}',[ProductController::class,'show']);
 Route::get('/products/search/{name}',[ProductController::class,'search']);
