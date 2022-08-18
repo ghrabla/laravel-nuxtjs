@@ -6,7 +6,7 @@
                     <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">Register</h2>
                     <div class="mt-12">
-                        <form @submit.prevent="submitForm">
+                        <!-- <form > -->
                             <div>
                                 <div class="text-sm font-bold text-gray-700 tracking-wide">Full Name</div>
                                 <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Adnane elgotabi" v-model="form.name">
@@ -36,11 +36,11 @@
                             <div class="mt-10">
                                 <button class="bg-blue-700 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-700
-                                shadow-lg">
+                                shadow-lg" @click="submitForm()">
                                     Register
                                 </button>
                             </div>
-                        </form>
+                        <!-- </form> -->
                         <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
                             you have an account ? <NuxtLink to="/login"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">Sign in</a> </NuxtLink>
                         </div>
@@ -77,8 +77,8 @@ export default {
            this.errors='';
            try {
                const res= await this.$axios.$post("api/register", this.form);
+               this.$router.push('/login')
             //    console.log(res);
-            console.log(res);
            } catch (error) {
                if(error.response.status===422){
                    this.errors = error?.response?.data?.errors;

@@ -16,6 +16,7 @@ export default {
     ],
     script: [
       { hid: 'fontawesome', src: 'https://kit.fontawesome.com/a9441c7460.js', defer: true },
+      { hid: 'sweetalert', src: '//cdn.jsdelivr.net/npm/sweetalert2@11', defer: true },
       { hid: 'lottiefiles', src: 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', defer: true },
     ]
   },

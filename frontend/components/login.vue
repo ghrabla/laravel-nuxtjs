@@ -78,3 +78,21 @@
         </div>
     </div>
 </template>
+
+<script>
+   export default{
+       data(){
+           return {
+
+           }
+       },
+       mounted(){
+        this.consoleme();
+       },
+       methods:{
+         consoleme(){
+             console.log("kamal")
+         }
+       }
+   }
+</script>

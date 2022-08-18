@@ -16,7 +16,7 @@
           <p class=" text-red-500 text-xs text-center" v-if="errors.password">
           {{ errors.password.join(" ") }}
         </p>
-          <button class="px-6  bg-green-300 text-white font-serif">SEND</button>
+          <button class="px-6  bg-green-300 text-white font-serif" >SEND</button>
           </div>
         </form>
           <div class=""> Already have an account? <nuxt-link class="text-blue-600" :to="{name:'auth-login'}">Login</nuxt-link>
@@ -41,17 +41,27 @@ export default {
         }
 
     },
+    mounted(){
+      this.consoleme();
+    },
     methods:{
+      async consoleme(){
+        console.log("kamal");
+      },
        async submitForm(){
            this.errors='';
+          
            try {
-               const res= await this.$axios.$post("api/register", this.form);
+               const res= await this.$axios.$post("api/register", this.form).then(
+                 this.$router.push('/login')
+               )
             //    console.log(res);
-            console.log(res);
-           } catch (error) {
+            
+           } 
+           catch (error) {
                if(error.response.status===422){
                    this.errors = error?.response?.data?.errors;
-               console.log(this.errors);
+              //  console.log(this.errors);
 
                }
 
