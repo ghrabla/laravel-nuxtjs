@@ -78,6 +78,9 @@ export default {
            try {
                const res= await this.$axios.$post("api/register", this.form);
                this.$router.push('/login')
+                
+              Swal.fire("register succesfully !", "success")
+            
             //    console.log(res);
            } catch (error) {
                if(error.response.status===422){

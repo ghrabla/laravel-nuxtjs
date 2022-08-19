@@ -6,10 +6,13 @@
                     <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
                     xl:text-bold">Log in</h2>
                     <div class="mt-12">
-                        <form>
+                        <!-- <form> -->
                             <div>
                                 <div class="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
-                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mike@gmail.com">
+                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mike@gmail.com" v-model="form.email">
+                                <p class=" text-red-500 text-xs text-center" v-if="errors.password">
+                                       {{ errors.email.join(" ") }}
+                                </p>
                             </div>
                             <div class="mt-8">
                                 <div class="flex justify-between items-center">
@@ -23,16 +26,19 @@
                                         </a>
                                     </div>
                                 </div>
-                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password">
+                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password" v-model="form.password">
+                                <p class=" text-red-500 text-xs text-center" v-if="errors.password">
+                                       {{ errors.password.join(" ") }}
+                                </p>
                             </div>
                             <div class="mt-10">
                                 <button class="bg-blue-700 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-700
-                                shadow-lg">
+                                shadow-lg" @click="submitForm()">
                                     Log In
                                 </button>
                             </div>
-                        </form>
+                        <!-- </form> -->
                         <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
                             Don't have an account ? <NuxtLink to="/register"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">Sign up</a> </NuxtLink>
                         </div>
@@ -80,19 +86,43 @@
 </template>
 
 <script>
-   export default{
-       data(){
-           return {
+export default {
+    data(){
+        return{
+            errors:{
+
+            },
+            form: {
+
+        name: "",
+        email: "",
+        password: ""
+      }
+        }
+
+    },
+    methods:{
+       async submitForm(){
+           this.errors='';
+           try {
+               const res= await this.$axios.$post("api/login", this.form);
+               this.$router.push('/product')
+                
+              Swal.fire("login succesfully !", "success")
+            
+            //    console.log(res);
+           } catch (error) {
+               if(error.response.status===422){
+                   this.errors = error?.response?.data?.errors;
+               console.log(this.errors);
+
+               }
 
            }
-       },
-       mounted(){
-        this.consoleme();
-       },
-       methods:{
-         consoleme(){
-             console.log("kamal")
-         }
-       }
-   }
+
+
+        }
+    }
+
+}
 </script>
