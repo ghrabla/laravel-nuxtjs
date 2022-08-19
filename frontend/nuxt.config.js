@@ -54,10 +54,16 @@ export default {
 
   auth: {
     strategies: {
-      laravelSanctum: {
-        provider: 'laravel/sanctum',
-        url: 'http://localhost:8000'
-      },
+      local :{
+        user : {
+          property : "data"
+        },
+        endpoints : {
+          login : {url : "api/login" , method : " post"},
+          logout : {url : "api/logout" , method : " post"},
+          user : {url : "api/users" , method : "get"},
+        }
+      }
     }
   },
 

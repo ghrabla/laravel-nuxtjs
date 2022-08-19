@@ -10,6 +10,16 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+
+    public function user(){
+        $user = auth()->user();
+        $response = [
+        "data" => $user
+        ];
+        return response($response, 200);
+    }
+
+
     // without confirmation 
     public function register(Request $request){
        $fields = $request->validate( [
@@ -54,7 +64,7 @@ class AuthController extends Controller
         $token = $user->createToken('myapptoken')->plainTextToken;
 
         $response = [
-            'data' => $user,
+            'user' => $user,
             'token' => $token
         ];
 
