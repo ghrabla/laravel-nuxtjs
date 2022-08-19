@@ -17,6 +17,7 @@ class AuthController extends Controller
         "data" => $user
         ];
         return response($response, 200);
+        // return auth()->user();
     }
 
 
