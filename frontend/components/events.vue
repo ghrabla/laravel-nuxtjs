@@ -41,13 +41,13 @@ export default {
         }
 
     },
-    mounted(){
-      this.consoleme();
-    },
+    // mounted(){
+    //   this.consoleme();
+    // },
     methods:{
-      async consoleme(){
-        console.log("kamal");
-      },
+      // async consoleme(){
+      //   console.log("kamal");
+      // },
        async submitForm(){
            this.errors='';
           
