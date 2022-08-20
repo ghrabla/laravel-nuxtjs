@@ -48,9 +48,9 @@ export default {
   ],
 
 
-  router: {
-    middleware: ['auth']
-  },
+  // router: {
+  //   middleware: ['auth']
+  // },
 
   axios: {
     baseURL: "http://localhost:8000",
@@ -59,6 +59,11 @@ export default {
   },
 
   auth: {
+    redirect : {
+     login : '/',
+     home : '/',
+     callback : '/'
+    },
     strategies: {
       local :{
         user : {
