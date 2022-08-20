@@ -60,9 +60,9 @@ export default {
 
   auth: {
     redirect : {
-     login : '/',
+    //  login : '/',
      home : '/',
-     callback : '/'
+    //  callback : '/'
     },
     strategies: {
       local :{
