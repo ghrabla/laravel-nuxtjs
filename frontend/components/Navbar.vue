@@ -45,14 +45,19 @@
           <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Product</a>
           </NuxtLink>
       </li>
-      <li>
-          <NuxtLink to="/login">
-          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+      <li v-if="this.check!=1">
+          <NuxtLink to="/login" >
+          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" >Login</a>
           </NuxtLink>
       </li>
-      <li>
-          <NuxtLink to="/register">
+      <li v-if="this.check!=1">
+          <NuxtLink to="/register" >
           <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Register</a>
+          </NuxtLink>
+      </li>
+      <li v-if="this.check==1">
+          <NuxtLink to="/" >
+          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-white dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" @click="logout()">Logout</a>
           </NuxtLink>
       </li>
       <li>
@@ -69,19 +74,32 @@
 
 
 <script>
+ import Cookies from "vue-cookies";
    export default {
-     name :'Navbar',
-
      data(){
        return{
-         open: false,
-       }
+         open : false,
+         check : Cookies.get("loginnum")
+       };
        
      },
+     mounted(){
+       this.checklogin()
+     },
      methods:{
-         toggle() {
-    	this.open = !this.open
-    }
+        toggle() {
+    	     this.open = !this.open
+        },
+        checklogin(){
+         this.check = Cookies.get("loginnum");
+        //  let loginnum1 = this.check;
+         console.log(this.check);
+        //  return check;
+        },
+        logout(){
+         Cookies.remove("loginnum")
+        }
+
        }
    }
 </script>

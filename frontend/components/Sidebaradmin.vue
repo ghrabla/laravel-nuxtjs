@@ -36,7 +36,7 @@
 							<i class="fa fa-address-book" aria-hidden="true"></i> Contacts
 						</NuxtLink>
 						</a>
-                        <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
+                        <a href="javascript:void(0)" class="font-bold text-xl my-5 " @click="$auth.logout()">
 							<i class="fa fa-sign-out" aria-hidden="true"></i> Logout
 						</a>
 					</div>

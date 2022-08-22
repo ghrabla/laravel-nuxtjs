@@ -21,6 +21,7 @@ export default {
     ]
   },
 
+  // ssr : false,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
@@ -44,7 +45,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
+    '@nuxtjs/auth-next',
+    // 'nuxt-vuex-localstorage'
+    // 'vue-localstorage'
   ],
 
 
@@ -59,11 +62,11 @@ export default {
   },
 
   auth: {
-    // redirect : {
-    // //  login : '/',
-    //  home : '/',
-    // //  callback : '/'
-    // },
+    redirect : {
+     login : '/',
+     home : '/',
+     callback : '/'
+    },
     strategies: {
       local :{
         user : {
@@ -71,8 +74,8 @@ export default {
           // _scheme : 'local',
         },
         endpoints : {
-          login : {url : "/api/login" , method : "post"},
-          logout : {url : "/api/logout" , method : "post"},
+          login : {url : "/api/adminlogin" , method : "post"},
+          logout : {url : "/api/adminlogout" , method : "post"},
           // user : {url : "/api/auth/user" , method : "get"},
         }
         

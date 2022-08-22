@@ -86,6 +86,7 @@
 </template>
 
 <script>
+import Cookies from "vue-cookies";
 export default {
     data(){
         return{
@@ -103,11 +104,12 @@ export default {
        async submitForm(){
            this.errors='';
            try {
-                  const res = await this.$auth.loginWith("local",{data : this.form});
-            //    const res = await this.$axios.$post("api/login", this.form);
+                //   const res = await this.$auth.loginWith("local",{data : this.form});
+               const res = await this.$axios.$post("api/login", this.form);
                console.log(res)
+               Cookies.set('loginnum',1);
                this.$router.push('/product')
-              Swal.fire("login succesfully !", "success")
+               Swal.fire("login succesfully !", "success")
             
             //    console.log(res);
            } catch (error) {

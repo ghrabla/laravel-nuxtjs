@@ -15,7 +15,7 @@
               <div class="absolute right-0 bottom-0 w-3 h-3 rounded-full bg-green-500"></div>
             </div>
             <div class="mt-4 font-bold">
-                kamal Rhrabla
+                {{$auth.user.name}}
             </div>
             </div>
               

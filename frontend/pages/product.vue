@@ -1,8 +1,12 @@
 <template>
     <div>
+
+  
          <Navbar></Navbar>
-  <product></product>
+        <product></product>
   <!-- <Footer></Footer> -->
+      
+    
     </div>
 </template>
 

@@ -14,6 +14,16 @@
         </div>
     </div>
 </template>
+<script>
+    export default{
+      data(){
+        return{
+          // chelog : Cookies.get("loginnum")
+        }
+      }
+    }
+</script>
+
 
 <style scoped>
     #home-back{
