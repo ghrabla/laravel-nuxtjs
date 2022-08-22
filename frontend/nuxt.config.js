@@ -59,21 +59,23 @@ export default {
   },
 
   auth: {
-    redirect : {
-    //  login : '/',
-     home : '/',
-    //  callback : '/'
-    },
+    // redirect : {
+    // //  login : '/',
+    //  home : '/',
+    // //  callback : '/'
+    // },
     strategies: {
       local :{
         user : {
-          property : "data"
+          property : "data",
+          // _scheme : 'local',
         },
         endpoints : {
           login : {url : "/api/login" , method : "post"},
           logout : {url : "/api/logout" , method : "post"},
-          user : {url : "/api/auth/user" , method : "get"},
+          // user : {url : "/api/auth/user" , method : "get"},
         }
+        
       }
     }
   },
