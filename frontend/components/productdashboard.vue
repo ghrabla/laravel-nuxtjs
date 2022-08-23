@@ -107,7 +107,8 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="n in ns" :key="n">
+            <tr  v-for="product in allproducts"
+                :key="product.id">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
                   <div class="flex-shrink-0 w-10 h-10">
@@ -183,6 +184,7 @@
 
 <script>
 
+import { mapGetters, mapActions } from "vuex";
  export default{
    inject:['show'],
    data(){
@@ -194,10 +196,21 @@
      }
    },
    methods :{
-     showfun(num){
+     ...mapActions(["fetchproducts"])
+     ,showfun(num){
        this.showaction = num;
       //  this.showaction = !this.showaction;
-     }
+     },
+  //    async fetchSomething() {
+  //   const ip = await this.$axios.$get('api/products')
+  //   this.ip = ip
+  //   console.log(ip)
+  // }
+   },
+   computed : mapGetters(["allproducts"]),
+   created(){
+     this.fetchproducts();
+    //  this.fetchSomething();
    }
  }
 

@@ -20,8 +20,8 @@ export default {
       { hid: 'lottiefiles', src: 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js', defer: true },
     ]
   },
-
-  // ssr : false,
+  // devtools : false,
+  ssr : false,
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],

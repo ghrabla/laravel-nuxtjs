@@ -84,18 +84,18 @@
        
      },
      mounted(){
-       this.checklogin()
+      //  this.checklogin()
      },
      methods:{
         toggle() {
     	     this.open = !this.open
         },
-        checklogin(){
-         this.check = Cookies.get("loginnum");
-        //  let loginnum1 = this.check;
-         console.log(this.check);
-        //  return check;
-        },
+        // checklogin(){
+        //  this.check = Cookies.get("loginnum");
+        // //  let loginnum1 = this.check;
+        // //  console.log(this.check);
+        // //  return check;
+        // },
         logout(){
          Cookies.remove("loginnum")
         }

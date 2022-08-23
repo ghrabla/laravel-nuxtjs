@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- <Navbar /> -->
-    <no-ssr placeholder="loading...">
+    <!-- <no-ssr placeholder="loading..."> -->
     <Nuxt />
     <Footer />
-    </no-ssr>
+    <!-- </no-ssr> -->
   </div>
 </template>

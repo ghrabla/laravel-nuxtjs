@@ -105,7 +105,7 @@ export default {
            try {
                   const res = await this.$auth.loginWith("local",{data : this.form});
             //    const res = await this.$axios.$post("api/login", this.form);
-               console.log(res)
+            //    console.log(res)
                this.$router.push('/productdashboard')
                Swal.fire("login succesfully !", "success")
             
@@ -113,7 +113,7 @@ export default {
            } catch (error) {
                if(error.response.status===422){
                    this.errors = error?.response?.data?.errors;
-               console.log(this.errors);
+            //    console.log(this.errors);
 
                }
 
