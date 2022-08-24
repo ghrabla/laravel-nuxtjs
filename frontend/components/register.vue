@@ -76,10 +76,9 @@ export default {
        async submitForm(){
            this.errors='';
            try {
-               const res= await this.$axios.$post("api/register", this.form);
+               const res = await this.$axios.$post("api/register", this.form);
                this.$router.push('/login')
-                
-              Swal.fire("register succesfully !", "success")
+               Swal.fire("register succesfully !", "success")
             
             //    console.log(res);
            } catch (error) {

@@ -3,7 +3,7 @@
 <div >			
 <!-- <div v-if="show" @click="show=!show" class="bg-gray-700 w-full h-full absolute"></div> -->
 <addform v-if="show"></addform>
-
+ <statistic></statistic>
 <form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showupdate">
    <a href="#" @click="showupdate=!showupdate" class="text-white font-bold flex justify-end text-xl mb-5"><i class="fa-solid fa-xmark"></i></a>
   <div class="text-center text-white font-bold mb-4">Update Product</div>
@@ -107,8 +107,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr  v-for="product in allproducts"
-                :key="product.id">
+            <tr  v-for="product in products" :key="product.id">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
                   <div class="flex-shrink-0 w-10 h-10">
@@ -120,7 +119,7 @@
                   </div>
                   <div class="ml-3">
                     <p class="text-gray-900 whitespace-no-wrap font-bold">
-                      Molly Sanders
+                      {{product.name}}
                     </p>
                     <p class="text-gray-600 whitespace-no-wrap">04</p>
                   </div>
@@ -148,7 +147,7 @@
               <td
                 class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
               >
-                <button @click="showfun(n)" v-if="showaction!=n"
+                <button @click="showfun(product)" v-if="showaction!=product"
                   type="button"
                   class="inline-block text-gray-500 hover:text-gray-700"
                 >
@@ -161,10 +160,10 @@
                     />
                   </svg>
                 </button>
-                <button class="font-bold text-xl" v-if="showaction==n" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
+                <button class="font-bold text-xl" v-if="showaction==product" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
-              <div class="flex flex-col gap-3" v-if="showaction==n">
-                  <button class="text-green-500 font-bold" @click="showupdate=!showupdate"><i class="fas fa-edit"></i> Update {{n}}</button>
+              <div class="flex flex-col gap-3" v-if="showaction==product">
+                  <button class="text-green-500 font-bold" @click="showupdate=!showupdate"><i class="fas fa-edit"></i> Update {{product.id}}</button>
                   <button class="text-red-500 font-bold"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
               </div> 
             </tr>
@@ -183,8 +182,7 @@
 </template>
 
 <script>
-
-import { mapGetters, mapActions } from "vuex";
+import {computed} from 'vue';
  export default{
    inject:['show'],
    data(){
@@ -192,26 +190,33 @@ import { mapGetters, mapActions } from "vuex";
        showaction: false,
        showupdate: false,
        ns: 5,
-       n : ''
+       n : '',
+       product : {},
+       products : [],
+       message : ''
      }
    },
+  
    methods :{
-     ...mapActions(["fetchproducts"])
-     ,showfun(num){
+     showfun(num){
        this.showaction = num;
       //  this.showaction = !this.showaction;
      },
-  //    async fetchSomething() {
-  //   const ip = await this.$axios.$get('api/products')
-  //   this.ip = ip
-  //   console.log(ip)
-  // }
+     
+    async fetchproducts() {
+    const response = await this.$axios.$get('api/products')
+    this.products = response
+    console.log(this.products)
+  }
    },
-   computed : mapGetters(["allproducts"]),
    created(){
      this.fetchproducts();
-    //  this.fetchSomething();
-   }
+   },
+    provide(){
+     return{
+       products: computed(() => this.products.length)
+     }
+   },
  }
 
 </script>

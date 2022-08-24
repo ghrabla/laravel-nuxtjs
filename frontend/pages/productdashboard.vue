@@ -3,8 +3,8 @@
     <div class="mt-5" id="app">
       
       <Sidebaradmin></Sidebaradmin> 
-      <search-profile></search-profile>
-			<statistic></statistic>
+       <search-profile></search-profile>
+      
       <productdashboard></productdashboard> 
       </div>
     </div>
@@ -12,14 +12,15 @@
 
 <script >
     export default{
-      middleware: 'auth',
+      // middleware: 'auth',
       head:{
         title: "products dashboard"
       },
        
     provide() {
        return {
-         show: false
+         show: false,
+        //  products : this.products
        }
     }
 }

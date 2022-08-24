@@ -25,7 +25,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total product</span> 
-                  <p class="font-bold text-xl">47</p>
+                  <p class="font-bold text-xl">{{products}}</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
@@ -40,6 +40,14 @@
         </div>
     </div>
 </template>
+
+<script>
+
+export default {
+  inject:['products'], 
+  }
+</script>
+
 
 <style scoped>
    #box-sta{

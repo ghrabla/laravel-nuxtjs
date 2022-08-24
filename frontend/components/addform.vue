@@ -6,14 +6,14 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
         Product Name
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="form.name">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
         Product Price
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="form.price">
     </div>
   </div>
   <div class="flex flex-wrap -mx-3 mb-6">
@@ -21,7 +21,7 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
         Description
       </label>
-      <textarea class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"  ></textarea>
+      <textarea class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" :v-bind="form.name" ></textarea>
       <p class="text-white text-xs italic">Make it as long and as crazy as you'd like</p>
     </div>
   </div>
@@ -40,7 +40,7 @@
         Type
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 bordeblackder-gray-200 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+        <select class="block appearance-none w-full bg-gray-200 bordeblackder-gray-200 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="form.type">
           <option>variator</option>
           <option>solar</option>
           <option>battery</option>
@@ -54,8 +54,9 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-zip">
         Quantity
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" v-model="form.quantity">
     </div>
+    <button @click="addproduct()">add</button>
   </div>
 </form>
 </template>
@@ -65,9 +66,40 @@
      inject:['show'],
      data(){
          return {
-             show:'show'
+             show:'show',
+             errors : {},
+             form : {
+               name : "",
+               slug : "kamal",
+               type : "",
+               quantity : "",
+               picture : "kamal.png",
+               description : "",
+               price : ""
+
+             }
          }
-     }
+     },
+    methods:{
+       async addproduct(){
+           this.errors='';
+           try {
+               const res = await this.$axios.$post("api/product", this.form);
+               Swal.fire("product added succesfully !", "success")
+            
+            //    console.log(res);
+           } catch (error) {
+               if(error.response.status===422){
+                   this.errors = error?.response?.data?.errors;
+               console.log(this.errors);
+
+               }
+
+           }
+
+
+        }
+    }
      
    }
 </script>

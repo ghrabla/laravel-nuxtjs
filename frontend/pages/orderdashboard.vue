@@ -10,7 +10,7 @@
 </template>
 <script >
     export default{
-      middleware: 'auth',
+      // middleware: 'auth',
       head:{
         title: "orders dashboard"
        
