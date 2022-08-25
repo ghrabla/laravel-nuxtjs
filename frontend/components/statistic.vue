@@ -7,7 +7,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total users</span> 
-                  <p class="font-bold text-xl">51</p>
+                  <p class="font-bold text-xl">{{users.length}}</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total message</span> 
-                  <p class="font-bold text-xl">24</p>
+                  <p class="font-bold text-xl">{{messages.length}}</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total product</span> 
-                  <p class="font-bold text-xl">{{products}}</p>
+                  <p class="font-bold text-xl">{{products.length}}</p>
                 </div>
             </div>
             <div class="flex mt-10 px-7 py-5 rounded lg:mx-0 mx-10 " id="box-sta">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="ml-4">
                   <span class="font-bold ">Total orders</span> 
-                  <p class="font-bold text-xl">27</p>
+                  <p class="font-bold text-xl">{{orders.length}}</p>
                 </div>
             </div>
         </div>
@@ -44,7 +44,45 @@
 <script>
 
 export default {
-  inject:['products'], 
+  // inject:['products'], 
+  data(){
+    return{
+      products: [],
+      orders : [],
+      users : [],
+      messages : [],
+    }
+    },
+    methods : {
+    async fetchproducts() {
+    const response = await this.$axios.$get('api/products')
+    this.products = response
+    console.log(this.products)
+  },
+    async fetchorders() {
+    const response = await this.$axios.$get('api/orders')
+    this.orders = response
+    console.log(this.orders)
+  },
+    async fetchusers() {
+    const response = await this.$axios.$get('api/users')
+    this.users = response
+    console.log(this.users)
+  },
+    async fetchmessages() {
+    const response = await this.$axios.$get('api/contacts')
+    this.messages = response
+    console.log(this.messages)
+  }
+  },
+  created(){
+     this.fetchproducts();
+     this.fetchorders();
+     this.fetchusers();
+     this.fetchmessages();
+   },
+   
+    
   }
 </script>
 

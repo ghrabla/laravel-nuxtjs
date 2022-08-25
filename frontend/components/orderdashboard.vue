@@ -2,7 +2,7 @@
     <!-- Page Content -->
 		<div >
 			
-            <div class="container mx-auto px-4 sm:px-8">
+  <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
     <div>
       <p class="text-xl font-semibold leading-tight flex justify-end">
@@ -44,7 +44,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="n in 5" :key="n">
+            <tr v-for="order in orders" :key="order.id">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
                   <div class="flex-shrink-0 w-10 h-10">
@@ -56,18 +56,18 @@
                   </div>
                   <div class="ml-3">
                     <p class="text-gray-900 whitespace-no-wrap font-bold">
-                      Molly Sanders
+                      {{order.fullname}}
                     </p>
-                    <p class="text-gray-600 whitespace-no-wrap">0498764532</p>
+                    <p class="text-gray-600 whitespace-no-wrap">{{order.phone}}</p>
                   </div>
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$20,000</p>
+                <p class="text-gray-900 whitespace-no-wrap">{{order.price}}</p>
                 <p class="text-gray-600 whitespace-no-wrap">DH</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">Sept 28, 2019</p>
+                <p class="text-gray-900 whitespace-no-wrap">{{order.created_at}}</p>
                 <p class="text-gray-600 whitespace-no-wrap">Due in 3 days</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
@@ -78,8 +78,8 @@
                     aria-hidden
                     class="absolute inset-0 opacity-50 rounded-full"
                   ></span>
-                  <span class="relative">Solar</span>
-                  <span class="relative font-bold block">7</span>
+                  <span class="relative">{{order.type}}</span>
+                  <span class="relative font-bold block">{{order.quantity}}</span>
                 </span>
               </td>
               <td
@@ -105,8 +105,30 @@
       </div>
     </div>
   </div>
-</div></div>
-		
-	
+</div>
+</div>
 </template>
+
+<script>
+   export default {
+    //  inject : ['products'],
+     data(){
+       return{
+         orders : []
+       }
+     },
+     methods : {
+        async fetchorders() {
+    const response = await this.$axios.$get('api/orders')
+    this.orders = response
+    console.log(this.orders)
+  },
+     },
+     created(){
+       this.fetchorders();
+     }
+   }
+</script>
+
+
 
