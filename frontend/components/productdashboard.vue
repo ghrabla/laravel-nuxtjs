@@ -6,20 +6,20 @@
  <statistic></statistic>
 <form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showupdate">
    <a href="#" @click="showupdate=!showupdate" class="text-white font-bold flex justify-end text-xl mb-5"><i class="fa-solid fa-xmark"></i></a>
-  <div class="text-center text-white font-bold mb-4">Update Product</div>
+  <!-- <div class="text-center text-white font-bold mb-4">Update Product</div> -->
   <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
         Product Name
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="product.name">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
         Product Price
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="product.price">
     </div>
   </div>
   <div class="flex flex-wrap -mx-3 mb-6">
@@ -27,7 +27,7 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
         Description
       </label>
-      <textarea class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"  ></textarea>
+      <textarea class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"  v-model="product.description"></textarea>
       <p class="text-white text-xs italic">Make it as long and as crazy as you'd like</p>
     </div>
   </div>
@@ -36,7 +36,7 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
         picture
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="file" >
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="product.picture">
     </div>
   </div>
   <div class="flex -mx-3 mb-2">
@@ -46,7 +46,7 @@
         Type
       </label>
       <div class="relative">
-        <select class="block appearance-none w-full bg-gray-200 bordeblackder-gray-200 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+        <select class="block appearance-none w-full bg-gray-200 bordeblackder-gray-200 text-black py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" v-model="product.type">
           <option>variator</option>
           <option>solar</option>
           <option>battery</option>
@@ -60,8 +60,11 @@
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-zip">
         Quantity
       </label>
-      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210" v-model="product.quantity">
     </div>
+  </div>
+  <div class="p-2 w-full">
+    <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateproduct(product.id)">update </a>
   </div>
 </form>
 
@@ -94,7 +97,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Createdat/ Due
+                Createdat/ quant
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -121,17 +124,17 @@
                     <p class="text-gray-900 whitespace-no-wrap font-bold">
                       {{product.name}}
                     </p>
-                    <p class="text-gray-600 whitespace-no-wrap">04</p>
+                    <p class="text-gray-600 whitespace-no-wrap">{{product.id}}</p>
                   </div>
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">$20,000</p>
+                <p class="text-gray-900 whitespace-no-wrap">{{product.price}}</p>
                 <p class="text-gray-600 whitespace-no-wrap">DH</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                <p class="text-gray-900 whitespace-no-wrap">Sept 28, 2019</p>
-                <p class="text-gray-600 whitespace-no-wrap">Due in 3 days</p>
+                <p class="text-gray-900 whitespace-no-wrap">{{product.created_at}}</p>
+                <p class="text-red-600 whitespace-no-wrap font-bold">{{product.quantity}}</p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <span
@@ -141,7 +144,7 @@
                     aria-hidden
                     class="absolute inset-0 opacity-50 rounded-full"
                   ></span>
-                  <span class="relative">Solar</span>
+                  <span class="relative">{{product.type}}</span>
                 </span>
               </td>
               <td
@@ -163,8 +166,8 @@
                 <button class="font-bold text-xl" v-if="showaction==product" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
               <div class="flex flex-col gap-3" v-if="showaction==product">
-                  <button class="text-green-500 font-bold" @click="showupdate=!showupdate"><i class="fas fa-edit"></i> Update {{product.id}}</button>
-                  <button class="text-red-500 font-bold"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                  <button class="text-green-500 font-bold" @click="getproduct(product.id)"><i class="fas fa-edit" ></i> Update</button>
+                  <button class="text-red-500 font-bold" @click="deleteproduct(product.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
               </div> 
             </tr>
           </tbody>
@@ -190,10 +193,10 @@ import {computed} from 'vue';
        showaction: false,
        showupdate: false,
        ns: 5,
-       n : '',
-       product : {},
+       n : "",
+       product : {id:"",name:"",slug:"",type:"",quantity:"",picture:"",description:"",price:""},
        products : [],
-       message : ''
+       message : ""
      }
    },
   
@@ -207,8 +210,60 @@ import {computed} from 'vue';
     const response = await this.$axios.$get('api/products')
     this.products = response
     console.log(this.products)
-  }
-   },
+  },
+   deleteproduct(id) {
+      Swal.fire({
+        title: "Are you sure ?",
+        text: "You are going to delete this product",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "black",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.value) {
+        this.$axios.$delete("api/products/"+id)
+            .then((response) => {
+              Swal.fire("Deleted !", "success").then(() => {
+                this.products = this.products.filter((product) => {
+                  return product.id !== id;
+                });
+              });
+            })
+            .catch((err) => console.log(err));
+        }
+      });
+    },
+    async getproduct(id) {
+          this.showupdate=!this.showupdate;
+        const res = await  this.$axios.$get("api/products/"+id)
+          this.product = res;
+        // .then((response) => {
+        // })
+        // .catch((err) => console.log(err));
+    },
+      async updateproduct(id){
+           this.errors='';
+           try {
+               const res = await this.$axios.$put("api/products/"+id, this.product);
+               console.log(res)
+               Swal.fire("product updated succesfully !", "success")
+               this.fetchproducts()
+            
+            //    console.log(res);
+           } catch (error) {
+               if(error.response.status===422){
+                   this.errors = error?.response?.data?.errors;
+               console.log(this.errors);
+
+               }
+
+           }
+
+
+        }
+},
    created(){
      this.fetchproducts();
    },

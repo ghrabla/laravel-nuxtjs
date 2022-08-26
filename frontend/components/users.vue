@@ -1,7 +1,28 @@
 <template>
     <!-- Page Content -->
-		<div >
-		
+<div >
+			<form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showupdate">
+   <a href="#" @click="showupdate=!showupdate" class="text-white font-bold flex justify-end text-xl mb-5"><i class="fa-solid fa-xmark"></i></a>
+  <!-- <div class="text-center text-white font-bold mb-4">Update Product</div> -->
+  <div class="flex flex-wrap -mx-3 mb-6 ">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
+        user name
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="user.name">
+      <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+        user email
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="user.email">
+    </div>
+  </div>
+  <div class="p-2 w-full">
+    <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateuser(user.id)">update </a>
+  </div>
+</form>
             <!-- </div> -->
   <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
@@ -81,7 +102,7 @@
               <td
                 class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right"
               >
-                <button
+                <button   @click="showfun(user)" v-if="showaction!=user"
                   type="button"
                   class="inline-block text-gray-500 hover:text-gray-700"
                 >
@@ -94,7 +115,12 @@
                     />
                   </svg>
                 </button>
+                <button class="font-bold text-xl" v-if="showaction==user" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
+               <div class="flex flex-col gap-3" v-if="showaction==user">
+                  <button class="text-green-500 font-bold" @click="getuser(user.id)"><i class="fas fa-edit" ></i> Update</button>
+                  <button class="text-red-500 font-bold" @click="deleteuser(user.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+              </div> 
             </tr>
           </tbody>
         </table>
@@ -109,16 +135,75 @@
     //  inject : ['products'],
      data(){
        return{
-         users : []
+         user : {},
+         users : [],
+          showaction: false,
+       showupdate: false,
        }
      },
      methods : {
+         showfun(num){
+       this.showaction = num;
+      //  this.showaction = !this.showaction;
+     },
         async fetchusers() {
     const response = await this.$axios.$get('api/users')
     this.users = response
     console.log(this.users)
   },
-     },
+    deleteuser(id) {
+      Swal.fire({
+        title: "Are you sure ?",
+        text: "You are going to delete this user",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "black",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+        cancelButtonText: "Cancel",
+      }).then((result) => {
+        if (result.value) {
+        this.$axios.$delete("api/users/"+id)
+            .then((response) => {
+              Swal.fire("Deleted !", "success").then(() => {
+                this.users = this.users.filter((user) => {
+                  return user.id !== id;
+                });
+              });
+            })
+            .catch((err) => console.log(err));
+        }
+      });
+    },
+        async getuser(id) {
+          this.showupdate=!this.showupdate;
+        const res = await  this.$axios.$get("api/users/"+id)
+          this.user = res;
+        // .then((response) => {
+        // })
+        // .catch((err) => console.log(err));
+    },
+      async updateuser(id){
+           this.errors='';
+           try {
+               const res = await this.$axios.$put("api/users/"+id, this.user);
+               console.log(res)
+               Swal.fire("user updated succesfully !", "success")
+               this.fetchusers()
+            
+            //    console.log(res);
+           } catch (error) {
+               if(error.response.status===422){
+                   this.errors = error?.response?.data?.errors;
+               console.log(this.errors);
+
+               }
+
+           }
+
+
+        }
+},
      created(){
        this.fetchusers();
      }

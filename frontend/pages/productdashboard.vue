@@ -12,7 +12,7 @@
 
 <script >
     export default{
-      // middleware: 'auth',
+      middleware: 'auth',
       head:{
         title: "products dashboard"
       },
