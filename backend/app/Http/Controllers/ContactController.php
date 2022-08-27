@@ -9,7 +9,7 @@ class ContactController extends Controller
 {
     //
     public function index(){
-        return Contact::all();
+        return Contact::orderBy('created_at', 'desc')->get();
     }
 
 

@@ -1,6 +1,7 @@
 <template>
-      <body class="antialiased  font-sans" >
-    <div class="max-w-6xl mx-auto">
+   <div class="flex lg:justify-between justify-center flex-wrap bg-gray-200">
+    <div class="antialiased  font-sans" v-for="product in products" :key="product">
+    <div class="max-w-6xl mx-auto" >
         <div class="flex">
             <div class="py-6 px-3">
                 <div class="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -13,7 +14,7 @@
                     </div>
                     <div class="p-4">
                         <p class="uppercase tracking-wide text-sm font-bold text-gray-700">Detached house • 5y old</p>
-                        <p class="text-3xl text-gray-900">$760</p>
+                        <p class="text-3xl text-gray-900">{{product.price}}DH</p>
                         <p class="text-gray-700">742 Evergreen Terrace and its goo...</p>
                     </div>
                     <div class="flex p-4 border-t border-gray-300 text-gray-700">
@@ -39,8 +40,21 @@
             </div>
         </div>
     </div>
-</body>
+</div>
+   </div>
 </template>
+
+<script>
+    export default{
+        inject:['product','products'],
+        data(){
+            return{
+            
+            }
+        }
+    }
+</script>
+
 
 <style scoped>
   .flex{

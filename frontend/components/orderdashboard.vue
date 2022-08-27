@@ -2,7 +2,7 @@
 
     <!-- Page Content -->
 	<div >
-			<form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showupdate">
+		<form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showupdate">
    <a href="#" @click="showupdate=!showupdate" class="text-white font-bold flex justify-end text-xl mb-5"><i class="fa-solid fa-xmark"></i></a>
   <!-- <div class="text-center text-white font-bold mb-4">Update Product</div> -->
   <div class="flex flex-wrap -mx-3 mb-6 ">
@@ -53,18 +53,18 @@
   <div class="p-2 w-full">
     <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateorder(order.id)">update </a>
   </div>
-      </form>
+  </form>
 
-  <a href="javascript:void(0)" v-if="showsort" @click="sort1()" class="cursor-pointer">older</a>
+   
   <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
-    <div>
-      <p class="text-xl font-semibold leading-tight flex justify-end">
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="sort1()">
-          Sort By <i class="fa-solid fa-caret-down "></i>
-         </button>
-      </p>
-    </div>
+<label for="countries" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-gray-400">Select an option</label>
+<select name="sortBy" id="sortBy" @change="sort(sortType)" v-model="sortType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/6 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+  <option v-for="item in sortOptions" :key="item" :value="item.value">{{item.text}}</option>
+</select>
+    
+
+      
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div
         class="inline-block min-w-full shadow-md rounded-lg overflow-hidden"
@@ -177,7 +177,13 @@
          orders : [],
          showaction: false,
          showupdate: false,
-         showsort : false
+         showsort : false,
+         sortType: 'new',
+         sortOptions: [
+          // { text: 'sort by', value: 'new' },
+          { text: 'new', value: 'new' },
+          { text: 'old', value: 'old' },
+       ]
        }
      },
      methods : {
@@ -185,11 +191,18 @@
        this.showaction = num;
       //  this.showaction = !this.showaction;
      },
-      sort1(){
-		 this.orders.sort((a, b) =>(a.postale > b.postale ? -1 : 1));
-		 this.showsort = !this.showsort;
-	 },
-        async fetchorders() {
+     showtime(){
+       this.showsort = !this.showsort;
+     },
+   
+    sort(type){
+      if (type === 'old'){
+		    this.orders.sort((a, b) =>(a.id > b.id ? 1 : -1));
+      }else{
+		    this.orders.sort((a, b) =>(a.id > b.id ? -1 : 1));
+      }
+	    },
+    async fetchorders() {
     const response = await this.$axios.$get('api/orders')
     this.orders = response
     console.log(this.orders)
