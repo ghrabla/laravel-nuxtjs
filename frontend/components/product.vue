@@ -1,6 +1,6 @@
 <template>
-    
     <div>
+    
       <div class="font-sans text-black  bg-gray-200 flex lg:flex-row flex-col items-center justify-around">
       <div class="flex flex-wrap justify-center lg:my-0 my-5" >
           <li class="list-none cursor-pointer mx-5 lg:my-0 md:my-0 my-5" v-for="n in choices" :key="n" @click="showfun(n,n)"  :class="showaction==n ? 'bg-indigo-600 text-white font-bold rounded py-2 px-2': 'block'">{{n}}</li>
@@ -27,7 +27,7 @@
 
     <div class="flex lg:justify-between justify-center flex-wrap bg-gray-200 ">
        <!-- <card />  -->
-       <div class="antialiased  font-sans" v-for="product in filteredList.filter(p => p.type === currentType || currentType === n || currentType === 'all')" :key="product.id">
+       <div class="antialiased  font-sans" v-for="product in filteredList.filter(p => p.type === currentType || currentType === n || currentType === 'all')" :key="product">
     <div class="max-w-6xl mx-auto" >
         <div class="flex">
             <div class="py-6 px-3">
@@ -49,7 +49,9 @@
                            <i class="fas fa-shopping-cart"></i>   <p class="ml-2 font-bold cursor-pointer">Panier</p>
                         </div>
                         <div class="flex-1 inline-flex items-center">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i>  <p class="ml-2 font-bold cursor-pointer">Details</p>
+                        <Nuxt-link :to="product.name">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i><a href="javascript:void(0)" class="ml-2 font-bold ">Details</a>
+                        </Nuxt-link>
                         </div>
                     </div>
                 </div>

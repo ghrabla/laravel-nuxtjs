@@ -2,15 +2,16 @@
     <div >
     <div >
       <navbar></navbar>  
-      <slug></slug>  
+      <Details></Details>  
     </div>
     </div>
 </template>
 
 <script >
+import Details from '../components/details.vue'
 import Navbar from '../components/Navbar.vue'
     export default{
-  components: { Navbar },
+  components: { Navbar, Details },
       head:{
         title: "product details"
        

@@ -1,7 +1,7 @@
 <template>
     <div class="antialiased">
   
-
+<div>{{post}}</div>
 <div class="bg-indigo-700 text-indigo-200 md:text-center py-2 px-4">
   Inspired from Dribbble Shot by <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">Vishnu Prasad</a>.
   See his works on <a href="https://dribbble.com/vlockn" class="font-bold underline hover:text-indigo-100">Dribbble</a>.
@@ -87,3 +87,12 @@
 </div>
   </div>
 </template>
+
+<script>
+  export default {
+    async asyncData({ params }) {
+      const post = await this.$axios.$get(`https://api.nuxtjs.dev/posts/${params.id}`)
+      return { post }
+    }
+  }
+</script>
