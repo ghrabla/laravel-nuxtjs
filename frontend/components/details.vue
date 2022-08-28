@@ -1,7 +1,7 @@
 <template>
     <div class="antialiased">
   
-<div>{{post}}</div>
+<!-- <div>{{this.$route.params.id}}</div> -->
 <div class="bg-indigo-700 text-indigo-200 md:text-center py-2 px-4">
   Inspired from Dribbble Shot by <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">Vishnu Prasad</a>.
   See his works on <a href="https://dribbble.com/vlockn" class="font-bold underline hover:text-indigo-100">Dribbble</a>.
@@ -13,19 +13,23 @@
   <!-- Breadcrumbs -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center space-x-2 text-gray-400 text-sm">
+      <nuxt-link to="/">
       <a href="#" class="hover:underline hover:text-gray-600">Home</a>
+      </nuxt-link>
       <span>
         <svg class="h-5 w-5 leading-none text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </span>
-      <a href="#" class="hover:underline hover:text-gray-600">Electronics</a>
+      <nuxt-link to="/product">
+      <a href="#" class="hover:underline hover:text-gray-600">Product</a>
+      </nuxt-link>
       <span>
         <svg class="h-5 w-5 leading-none text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </span>
-      <span>Headphones</span>
+      <span>{{product.name}}</span>
     </div>
   </div>
   <!-- ./ Breadcrumbs -->
@@ -34,10 +38,11 @@
     <div class="flex flex-col md:flex-row -mx-4">
       <div class="md:flex-1 px-4">
         <div x-data="{ image: 1 }" x-cloak>
-          <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4">
-            <div x-show="image === 1" class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
-              <span class="text-5xl">1</span>
-            </div>
+          <div class=" md:h-80 rounded-lg bg-gray-100 md:mb-4 mb-50">
+            <!-- <div x-show="image === 1" class=" " > -->
+
+              <img class="md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"  v-bind:src="product.picture" alt="">
+            <!-- </div> -->
           </div>
 
         </div>
@@ -49,17 +54,17 @@
         <div class="flex items-center space-x-4 my-4">
           <div>
             <div class="rounded-lg bg-gray-100 flex py-2 px-3">
-              <span class="text-indigo-400 mr-1 mt-1">$</span>
-              <span class="font-bold text-indigo-600 text-3xl">25</span>
+              <span class="text-indigo-400 mr-1 mt-1">DH</span>
+              <span class="font-bold text-indigo-600 text-3xl">{{product.price}}</span>
             </div>
           </div>
           <div class="flex-1">
             <p class="text-green-500 text-xl font-semibold">Save 12%</p>
-            <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
+            <p class="text-gray-400 text-sm">{{product.created_at}}</p>
           </div>
         </div>
 
-        <p class="text-gray-500">Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Vitae exercitationem porro saepe ea harum corrupti vero id laudantium enim, libero blanditiis expedita cupiditate a est.</p>
+        <p class="text-gray-500">{{product.description}}</p>
 
         <div class="flex py-4 space-x-4">
           <div class="relative">
@@ -89,10 +94,30 @@
 </template>
 
 <script>
+import NuxtLogo from './NuxtLogo.vue'
   export default {
-    async asyncData({ params }) {
-      const post = await this.$axios.$get(`https://api.nuxtjs.dev/posts/${params.id}`)
-      return { post }
+  components: { NuxtLogo },
+    data(){
+      return{
+        product : {}
+      }
+    },
+    methods:{
+     async fetchoneproduct(){
+       const response = await this.$axios.$get(`api/products/${this.$route.params.id}`)
+       this.product = response
+      //  if(this.product){
+      //    }
+      },
+      // checkid(){
+      //   if (this.product.id!=this.$route.params.id){
+      //     this.$router.push('/product');
+      //   }
+      // }
+
+    },
+    created(){
+      this.fetchoneproduct();
     }
   }
 </script>

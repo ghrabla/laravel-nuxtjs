@@ -8,8 +8,8 @@
 </template>
 
 <script >
-import Details from '../components/details.vue'
-import Navbar from '../components/Navbar.vue'
+import Details from '../../../components/details.vue'
+import Navbar from '../../../components/Navbar.vue'
     export default{
   components: { Navbar, Details },
       head:{

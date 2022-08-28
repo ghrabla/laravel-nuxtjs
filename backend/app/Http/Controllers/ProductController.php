@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
 {
@@ -36,10 +37,12 @@ class ProductController extends Controller
             'type' => 'required',
             'quantity' => 'required',
             'picture' => 'required',
+            // 'picture' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'description' => 'required',
             'price' => 'required',
         
         ]);
+        // $image_path = $request->file('image')->store('images', 'public');
         return Product::create($request->all());
     }
 
