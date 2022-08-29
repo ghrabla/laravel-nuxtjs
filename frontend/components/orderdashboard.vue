@@ -58,7 +58,7 @@
    
   <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
-<label for="countries" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-gray-400">Select an option</label>
+<label for="countries" class="block mb-2 text-sm  font-medium text-gray-900 dark:text-gray-400">Sélectionner une option</label>
 <select name="sortBy" id="sortBy" @change="sort(sortType)" v-model="sortType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/6 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
   <option v-for="item in sortOptions" :key="item" :value="item.value">{{item.text}}</option>
 </select>
@@ -75,7 +75,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Owner/Phone 
+                PROPRIÉTAIRE/TÉLÉPHONE 
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -85,7 +85,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Createdat/ Due
+                CREATDAT/PRODNOM
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -178,11 +178,11 @@
          showaction: false,
          showupdate: false,
          showsort : false,
-         sortType: 'new',
+         sortType: 'nouvelle',
          sortOptions: [
           // { text: 'sort by', value: 'new' },
-          { text: 'new', value: 'new' },
-          { text: 'old', value: 'old' },
+          { text: 'nouvelle', value: 'nouvelle' },
+          { text: 'ancien', value: 'ancien' },
        ]
        }
      },
@@ -196,7 +196,7 @@
      },
    
     sort(type){
-      if (type === 'old'){
+      if (type === 'ancien'){
 		    this.orders.sort((a, b) =>(a.id > b.id ? 1 : -1));
       }else{
 		    this.orders.sort((a, b) =>(a.id > b.id ? -1 : 1));

@@ -18,17 +18,17 @@
 						</a>
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
 						<NuxtLink to="/productdashboard">
-							<i class="fas fa-chart-bar"></i> Products
+							<i class="fas fa-chart-bar"></i> Produits
 						</NuxtLink>
 						</a>
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
 						<NuxtLink to="/orderdashboard">
-							<i class="fas fa-bell"></i> Orders
+							<i class="fas fa-bell"></i> Ordres
 						</NuxtLink>
 						</a>
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
 						<NuxtLink to="/users">
-							<i class="fa fa-user" aria-hidden="true"></i> Users
+							<i class="fa fa-user" aria-hidden="true"></i> Utulisateurs
 						</NuxtLink>
 						</a>
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 ">
@@ -37,8 +37,8 @@
 						</NuxtLink>
 						</a>
                         <a href="javascript:void(0)" class="font-bold text-xl my-5 " @click="$auth.logout()">
-							<i class="fa fa-sign-out" aria-hidden="true"></i> Logout
-						</a>
+							<i class="fa fa-sign-out" aria-hidden="true"></i> Déconnexion
+						</a> 
 					</div>
 				</div>
 			</div>

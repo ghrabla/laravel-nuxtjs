@@ -4,11 +4,11 @@
             <div class="lg:w-1/2 xl:max-w-screen-sm">
                 <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                     <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
-                    xl:text-bold">Log in</h2>
+                    xl:text-bold">Connexion</h2>
                     <div class="mt-12">
                         <form @submit.prevent="submitForm">
                             <div>
-                                <div class="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
+                                <div class="text-sm font-bold text-gray-700 tracking-wide">Adresse Email </div>
                                 <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mike@gmail.com" v-model="form.email">
                                 <p class=" text-red-500 text-xs text-center" v-if="errors.password">
                                        {{ errors.email.join(" ") }}
@@ -17,16 +17,16 @@
                             <div class="mt-8">
                                 <div class="flex justify-between items-center">
                                     <div class="text-sm font-bold text-gray-700 tracking-wide">
-                                        Password
+                                       mot de pass
                                     </div>
-                                    <div>
+                                    <!-- <div>
                                         <a class="text-xs font-display font-semibold text-blue-700 hover:text-indigo-800
                                         cursor-pointer">
-                                            Forgot Password?
+                                            Manques votre mot de pass?
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password" v-model="form.password">
+                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Entre votre mot de pass" v-model="form.password">
                                 <p class=" text-red-500 text-xs text-center" v-if="errors.password">
                                        {{ errors.password.join(" ") }}
                                 </p>
@@ -35,12 +35,12 @@
                                 <button class="bg-blue-700 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-700
                                 shadow-lg" type="submit">
-                                    Log In
+                                    Connexion
                                 </button>
                             </div>
                         </form>
                         <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
-                            Don't have an account ? <NuxtLink to="/register"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">Sign up</a> </NuxtLink>
+                            Tu n'as pas un compte ? <NuxtLink to="/register"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">S'inscrire</a> </NuxtLink>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
             <div class="hidden lg:flex items-center justify-center bg-indigo-100 flex-1 h-screen">
                 <div class="max-w-xs transform duration-200 hover:scale-110 cursor-pointer">
                     <svg class="w-5/6 mx-auto" xmlns="http://www.w3.org/2000/svg" id="f080dbb7-9b2b-439b-a118-60b91c514f72" data-name="Layer 1" viewBox="0 0 528.71721 699.76785">
-                        <title>Login</title>
+                        <title>Connexion</title>
                         <rect y="17.06342" width="444" height="657" fill="#535461"/>
                         <polygon points="323 691.063 0 674.063 0 17.063 323 0.063 323 691.063" fill="#7f9cf5"/>
                         <circle cx="296" cy="377.06342" r="4" fill="#535461"/>

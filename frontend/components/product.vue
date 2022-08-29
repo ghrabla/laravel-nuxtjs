@@ -45,7 +45,7 @@
                     <div class="p-4">
                         <p class="uppercase tracking-wide text-sm font-bold text-gray-700">{{product.name}}</p>
                         <p class="text-3xl text-gray-900">{{product.price}} DH</p>
-                        <p class="text-gray-700">click on details for more informati...</p>
+                        <p class="text-gray-700">cliquez sur les détails pour plus...</p>
                     </div>
                     <div class="flex p-4 border-t border-gray-300 text-gray-700">
                         <div class="flex-1 inline-flex items-center">

@@ -10,14 +10,14 @@
   <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
-        Product Name
+        Produit Nom
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="product.name">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
-        Product Price
+        Produit Prix
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="product.price">
     </div>
@@ -34,7 +34,7 @@
    <div class="flex flex-wrap -mx-3 mb-6">
   <div class="w-full px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
-        picture
+        Image lien
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="product.picture">
     </div>
@@ -66,7 +66,7 @@
     </div>
   </div>
   <div class="p-2 w-full">
-    <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateproduct(product.id)">update </a>
+    <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateproduct(product.id)">Editer</a>
   </div>
 </form>
 
@@ -75,7 +75,7 @@
     <div>
       <p class="text-xl font-semibold leading-tight flex lg:justify-end justify-center">
           <button  @click="show = !show" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-         <i class="fa fa-plus" aria-hidden="true" ></i> Add product
+         <i class="fa fa-plus" aria-hidden="true" ></i> ajouter produit
          </button>
       </p>
     </div>
@@ -89,17 +89,17 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Product/Quantity 
+                Produit/ID 
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Price
+                Prix
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Createdat/ quant
+                Creatdat/ quant
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -168,8 +168,8 @@
                 <button class="font-bold text-xl" v-if="showaction==product" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
               <div class="flex flex-col gap-3" v-if="showaction==product">
-                  <button class="text-green-500 font-bold" @click="getproduct(product.id)"><i class="fas fa-edit" ></i> Update</button>
-                  <button class="text-red-500 font-bold" @click="deleteproduct(product.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                  <button class="text-green-500 font-bold" @click="getproduct(product.id)"><i class="fas fa-edit" ></i>Editer</button>
+                  <button class="text-red-500 font-bold" @click="deleteproduct(product.id)"><i class="fa fa-trash" aria-hidden="true"></i>Supprimer</button>
               </div> 
             </tr>
           </tbody>

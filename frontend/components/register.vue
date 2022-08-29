@@ -4,18 +4,18 @@
             <div class="lg:w-1/2 xl:max-w-screen-sm">
                 <div class="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
                     <h2 class="text-center text-4xl text-indigo-900 font-display font-semibold lg:text-left xl:text-5xl
-                    xl:text-bold">Register</h2>
+                    xl:text-bold">S'inscrire</h2>
                     <div class="mt-12">
                         <!-- <form > -->
                             <div>
-                                <div class="text-sm font-bold text-gray-700 tracking-wide">Full Name</div>
+                                <div class="text-sm font-bold text-gray-700 tracking-wide">complete Nom</div>
                                 <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Adnane elgotabi" v-model="form.name">
                                 <p class=" text-red-500 text-xs text-center" v-if="errors.name">
                                        {{ errors.name.join(" ") }}
                                 </p>
                             </div>
                             <div class="mt-8">
-                                <div class="text-sm font-bold text-gray-700 tracking-wide">Email Address</div>
+                                <div class="text-sm font-bold text-gray-700 tracking-wide">Adresse Email </div>
                                 <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="mike@gmail.com" v-model="form.email">
                                 <p class=" text-red-500 text-xs text-center" v-if="errors.email">
                                        {{ errors.email.join(" ") }}
@@ -24,11 +24,11 @@
                             <div class="mt-8">
                                 <div class="flex justify-between items-center">
                                     <div class="text-sm font-bold text-gray-700 tracking-wide">
-                                        Password
+                                        mot de pass
                                     </div>
                                     
                                 </div>
-                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Enter your password" v-model="form.password">
+                                <input class="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" type="" placeholder="Entre votre mot de pass" v-model="form.password">
                                 <p class=" text-red-500 text-xs text-center" v-if="errors.password">
                                        {{ errors.password.join(" ") }}
                                 </p>
@@ -37,12 +37,12 @@
                                 <button class="bg-blue-700 text-gray-100 p-4 w-full rounded-full tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-blue-700
                                 shadow-lg" @click="submitForm()">
-                                    Register
+                                    s'inscrire
                                 </button>
                             </div>
                         <!-- </form> -->
                         <div class="mt-12 text-sm font-display font-semibold text-gray-700 text-center">
-                            you have an account ? <NuxtLink to="/login"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">Sign in</a> </NuxtLink>
+                            Tu as un compte ? <NuxtLink to="/login"> <a class="cursor-pointer text-blue-700 hover:text-indigo-800">Connexion</a> </NuxtLink>
                         </div>
                     </div>
                 </div>

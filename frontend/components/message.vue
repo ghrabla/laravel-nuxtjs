@@ -7,14 +7,14 @@
   <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
-        sender Name
+         Nome
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="message.fullname">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
-        sender email
+         email
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="message.email">
     </div>
@@ -25,20 +25,20 @@
         message
       </label>
       <textarea class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password"  v-model="message.message"></textarea>
-      <p class="text-white text-xs italic">Make it as long and as crazy as you'd like</p>
+      <!-- <p class="text-white text-xs italic">Make it as long and as crazy as you'd like</p> -->
     </div>
   </div>
    <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
-        sender phone
+        téléphone
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="message.phone">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
-        subject
+        sujet
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="message.subject">
     </div>
@@ -52,7 +52,7 @@
   <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
     <div>
-      <h2 class="text-2xl font-semibold leading-tight">messages table</h2>
+      <h2 class="text-2xl font-semibold leading-tight">messages tableau</h2>
     </div>
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div
@@ -64,7 +64,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Name / Phone
+                Nom / téléphone
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -74,12 +74,12 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Createdat / Due
+                Date de création 
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Subject
+                Sujet
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100"
@@ -94,7 +94,7 @@
                   <div class="flex-shrink-0 w-10 h-10">
                     <img
                       class="w-full h-full rounded-full"
-                      src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                      src="https://media.istockphoto.com/id/1041319964/vector/shadow-from-the-head.webp?s=612x612&w=is&k=20&c=1CpmZgXg5TKW464vCRuj-pKnczsRG0SCK2UVeJNu_fU="
                       alt=""
                     />
                   </div>
@@ -112,7 +112,7 @@
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">{{message.created_at}}</p>
-                <p class="text-gray-600 whitespace-no-wrap">Due in 6 days</p>
+                <!-- <p class="text-gray-600 whitespace-no-wrap">Due in 6 days</p> -->
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <span

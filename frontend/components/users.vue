@@ -7,14 +7,14 @@
   <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
-        user name
+        utulisateur nom
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="user.name">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
-        user email
+        utulisateur email
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="user.email">
     </div>
@@ -27,7 +27,7 @@
   <div class="container mx-auto px-4 sm:px-8">
   <div class="py-8">
     <div>
-      <h2 class="text-2xl font-semibold leading-tight">Websites users table</h2>
+      <h2 class="text-2xl font-semibold leading-tight">site web utulisateurs tableau</h2>
     </div>
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
       <div
@@ -49,7 +49,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Createdat / Due
+                Date de création 
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -68,7 +68,7 @@
                   <div class="flex-shrink-0 w-10 h-10">
                     <img
                       class="w-full h-full rounded-full"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80"
+                      src="https://media.istockphoto.com/id/1201514249/vector/person-gray-photo-placeholder-man.webp?s=612x612&w=is&k=20&c=cAPYLc49e4dihS4trUW2RNBVRqWIk1jbFQknabzAOas="
                       alt=""
                     />
                   </div>
@@ -86,7 +86,7 @@
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">{{user.created_at}}</p>
-                <p class="text-gray-600 whitespace-no-wrap">Due in 3 days</p>
+                <!-- <p class="text-gray-600 whitespace-no-wrap">Due in 3 days</p> -->
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <span
@@ -118,8 +118,8 @@
                 <button class="font-bold text-xl" v-if="showaction==user" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
                <div class="flex flex-col gap-3" v-if="showaction==user">
-                  <button class="text-green-500 font-bold" @click="getuser(user.id)"><i class="fas fa-edit" ></i> Update</button>
-                  <button class="text-red-500 font-bold" @click="deleteuser(user.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                  <button class="text-green-500 font-bold" @click="getuser(user.id)"><i class="fas fa-edit" ></i> Editer</button>
+                  <button class="text-red-500 font-bold" @click="deleteuser(user.id)"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
               </div> 
             </tr>
           </tbody>

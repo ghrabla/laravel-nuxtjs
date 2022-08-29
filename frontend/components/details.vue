@@ -3,8 +3,8 @@
   
 <!-- <div>{{this.$route.params.id}}</div> -->
 <div class="bg-indigo-700 text-indigo-200 md:text-center py-2 px-4">
-  Inspired from Dribbble Shot by <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">Vishnu Prasad</a>.
-  See his works on <a href="https://dribbble.com/vlockn" class="font-bold underline hover:text-indigo-100">Dribbble</a>.
+  la livraison il ya possible pour ce  <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">produit</a>.
+  Ssa c'est notre fourniseure <a href="https://dribbble.com/vlockn" class="font-bold underline hover:text-indigo-100">livero</a>.
 </div>
 
 
@@ -41,7 +41,7 @@
           <div class=" md:h-80 rounded-lg bg-gray-100 md:mb-4 mb-50">
             <!-- <div x-show="image === 1" class=" " > -->
 
-              <img class="md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"  v-bind:src="product.picture" alt="">
+              <img class="md:h-80 md:ml-32 rounded-lg bg-gray-100 mb-4 flex items-center justify-center"  v-bind:src="product.picture" alt="">
             <!-- </div> -->
           </div>
 

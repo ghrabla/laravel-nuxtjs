@@ -5,7 +5,7 @@
       <div class="lg:w-3/4 w-full bg-white px-10 py-10">
         <div class="flex justify-between border-b pb-8">
           <h1 class="font-semibold text-2xl">Shopping Cart</h1>
-          <h2 class="font-semibold text-2xl">3 Items</h2>
+          <h2 class="font-semibold text-2xl">4 Items</h2>
         </div>
         <div class="flex mt-10 mb-5">
           <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
@@ -16,10 +16,10 @@
         <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5" v-for="n in 4" :key="n">
           <div class="flex w-2/5"> <!-- product -->
             <div class="w-20">
-              <img class="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt="">
+              <img class="h-24" src="https://cleanergymaroc.com/wp-content/themes/cleanergy/assets/img/Onduleurs%20Solaire%20Ongrid" alt="">
             </div>
             <div class="flex flex-col justify-between ml-4 flex-grow">
-              <span class="font-bold text-sm">Iphone 6S</span>
+              <span class="font-bold text-sm">chouveu solaire</span>
               <span class="text-red-500 text-xs">Apple</span>
               <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
             </div>

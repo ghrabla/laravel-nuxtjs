@@ -3,19 +3,19 @@
         <body class="text-gray-700 bg-white antialiased" style="font-family: 'Roboto', sans-serif">
   <div class="py-20 bg-cover bg-no-repeat bg-fixed " id="backimg">
     <div class="container m-auto text-center px-6 opacity-100">
-      <h2 class="text-4xl font-bold mb-2 text-white">Echo Base...I've got something here!</h2>
-      <h3 class="text-2xl mb-8 text-white font-bold">Not much, but it could be a life form. This is Rouge Two. this is Rouge Two. Captain Solo, so you copy?</h3>
-      <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800">Commander Skywalker, do you copy?</button>
+      <h2 class="text-4xl font-bold mb-20 text-white">plus d'informations sur le FCES MAROC sur charika.ma!</h2>
+      <!-- <h3 class="text-2xl mb-8 text-white font-bold">Not much, but it could be a life form. This is Rouge Two. this is Rouge Two. Captain Solo, so you copy?</h3> -->
+      <a href="https://www.charika.ma/societe-fcesmaroc-435550" class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider hover:border-transparent hover:text-blue-500 hover:bg-gray-800">allons-y maintenant</a>
     </div>
   </div>
         
         <!-- Features -->
         <section class="container mx-auto px-6 p-10">
-          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Artoo!</h2>
+          <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">ce que nous faisons!</h2>
           <div class="flex items-center flex-wrap mb-20">
             <div class="w-full md:w-1/2 pr-10">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">Vortex</h4>
-              <p class="text-gray-600 mb-8">Their primary target will be the power generators. Prepare to open the shield. Sir, Rebel ships are coming into our sector. Good. Our first catch of the day. Stand by, ion control....Fire! The first transport is away.</p>
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">Objectif</h4>
+              <p class="text-gray-600 mb-8">Notre société se propose de vous offrir ses services, et désire entretenir avec vous des relations commerciales, rentrant dans les domaines de ses activité.</p>
             </div>
             <div class="w-full md:w-1/2">
               <img class="rounded-lg" src="~/assets/staticimg/3d-house-with-solar-pannels.jpg" alt="Vortex" />
@@ -26,14 +26,15 @@
               <img class="rounded-lg" src="..\assets\staticimg\solar-cell-farm-power-station-alternative-energy-from-sun.jpg" alt="use the force" />
             </div>
             <div class="w-full md:w-1/2 pl-10">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">Use the Force!</h4>
-              <p class="text-gray-600 mb-8">We'll never get it out now. So certain are you. Always with you it cannot be done. Hear you nothing that I say? Master, moving stones around is one thing. This is totally different. No! No different!</p>
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">Expérience</h4>
+              <p class="text-gray-600 mb-8">La sous-traitance de la maintenance de toutes sortes d'installations de climatisation, de froid industriel ou de chauffage central; avec des formules de contrat allant de la maintenance simple à la prise en charge totale par notre société.
+La vente de matériel, accessoires ou pièces de rechange d'équipement de climatisation, de chaufferie, ou autre utilité.</p>
             </div>
           </div>
           <div class="flex items-center flex-wrap mb-20">
             <div class="w-full md:w-1/2 pr-10">
-              <h4 class="text-3xl text-gray-800 font-bold mb-3">Life creates it</h4>
-              <p class="text-gray-600 mb-8">There is no try. I can't. It's too big. Size matters not. Look at me. Judge me by my size, do you? Hm? Mmmm. And well you should not. For my ally in the Force. And a powerful ally it is.</p>
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">َEfficacité</h4>
+              <p class="text-gray-600 mb-8">L'étude et la réalisation clé en main, d'installation de climatisation, de chambres froides, de chauffe eau solaire et de plomberie ainsi que la réalisation des installations des panneaux photovoltaïques.</p>
             </div>
             <div class="w-full md:w-1/2">
               <img class="rounded-lg" src="..\assets\staticimg\man-worker-firld-by-solar-panels.jpg" alt="Syncing" />
@@ -44,7 +45,7 @@
         <!-- Testimonials -->
         <section class="bg-gray-100">
           <div class="container mx-auto px-6 py-20">
-            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Artoo expresses</h2>
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">Notre équipe</h2>
             <div class="flex flex-wrap">
               
               <div class="w-full h-auto md:w-1/3 px-2 mb-4">
