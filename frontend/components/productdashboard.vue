@@ -118,7 +118,7 @@
                   <div class="flex-shrink-0 w-10 h-10">
                     <img
                       class="w-full h-full rounded-full"
-                      src="http://source.unsplash.com/100x100"
+                      :src="product.picture"
                       alt=""
                     />
                   </div>

@@ -12,7 +12,8 @@
        </button>
        </div>
        <div class="cursor-pointer font-bold ml-5 cursor-pointer" @click="sort0()">
-           Sort by <i class="fa-solid fa-caret-down"></i>
+           Sort by <i class="fa-solid fa-caret-down" v-if="!showsort"></i> 
+           <i class="fa-solid fa-caret-right" v-if="showsort"></i>
        </div>
            <div class="flex justify-col " v-if="showsort">
                <a href="javascript:void(0)" @click="sort1()">high</a>
