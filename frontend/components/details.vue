@@ -1,6 +1,67 @@
 <template>
+
     <div class="antialiased">
   
+<form  class="w-full max-w-lg absolute bg-gray-500 rounded  p-10 mx-auto ml:0 lg:ml-80 shadow-md z-50	absolute" v-if="showform">
+   <a href="#" @click="showform=!showform" class="text-white font-bold flex justify-end text-xl mb-5"><i class="fa-solid fa-xmark"></i></a>
+  <!-- <div class="text-center text-white font-bold mb-4">Update Product</div> -->
+  <div class="flex flex-wrap -mx-3 mb-6 ">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
+         Nome et prénom
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.fullname">
+      <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+         adresse
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.adresse">
+    </div>
+  </div>
+   <div class="flex flex-wrap -mx-3 mb-6 ">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
+        city
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.city">
+      <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+        postale code
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.postale">
+    </div>
+  </div>
+   <div class="flex flex-wrap -mx-3 mb-6 ">
+    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
+        téléphone
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.phone">
+      <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
+    </div>
+    <div class="w-full md:w-1/2 px-3">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+        Email
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.email">
+    </div>
+    <!-- <div class="w-full md:w-1/2 px-3 hidden">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
+        product id
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.product_id">
+    </div> -->
+  </div>
+  
+  <div class="p-2 w-full">
+    <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="sendorder()">Envoyer</a>
+  </div>
+</form>
+
 <!-- <div>{{this.$route.params.id}}</div> -->
 <div class="bg-indigo-700 text-indigo-200 md:text-center py-2 px-4">
   la livraison il ya possible pour ce  <a href="https://dribbble.com/shots/14127375-Product-Page" class="font-bold underline hover:text-indigo-100">produit</a>.
@@ -85,7 +146,7 @@
           <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-500">
             Ajouter au panier <i class="fas fa-shopping-cart"></i>
           </button>
-          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl  hover:bg-indigo-600 text-indigo-500 hover:text-white border-indigo-500 border-2	">
+          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl  hover:bg-indigo-600 text-indigo-500 hover:text-white border-indigo-500 border-2	" @click="showform=!showform">
             Acheter maintenant
           </button>
         </div>
@@ -102,7 +163,9 @@ import NuxtLogo from './NuxtLogo.vue'
   components: { NuxtLogo },
     data(){
       return{
-        product : {}
+        product : {},
+        order : {fullname:"" , adresse:"",city:"",postale:"",phone:"",email:"",product_id:""},
+        showform : false
       }
     },
     methods:{
@@ -112,6 +175,13 @@ import NuxtLogo from './NuxtLogo.vue'
       //  if(this.product){
       //    }
       },
+
+     async sendorder(){
+        const response = await this.$axios.$post('api/orders',{
+        fullname:this.order.fullname , adresse:this.order.adresse,city:this.order.city,postale:this.order.postale,phone:this.order.phone,email:this.order.email,product_id:this.$route.params.id
+        });
+        console.log(response);
+      }
       // checkid(){
       //   if (this.product.id!=this.$route.params.id){
       //     this.$router.push('/product');

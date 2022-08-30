@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('postale');
             $table->string('phone');
             $table->string('email');
+            $table->decimal('orderquant', 5, 2);
             $table->integer('product_id')->references('id')->on('products');
             $table->timestamps();
             // $table->unsignedBigInteger('product_id');

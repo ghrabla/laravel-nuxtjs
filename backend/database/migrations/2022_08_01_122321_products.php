@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('type');
             $table->string('quantity');
             $table->string('picture');
-            $table->string('description')->nullable();
+            $table->string('description',5000)->nullable();
             $table->decimal('price', 5, 2);
             $table->timestamps();
         });

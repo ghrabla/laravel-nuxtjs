@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -17,7 +18,8 @@ class OrderController extends Controller
     public function index(){
       return Order::join('products', 'products.id', '=', 'orders.product_id')
       -> orderBy('created_at', 'desc')
-      ->get(['orders.*', 'products.name','products.slug','products.description','products.price','products.type','products.quantity','products.picture']);
+      ->select('orders.*', 'products.name','products.slug','products.description','products.price','products.type','products.quantity','products.picture')
+      ->get();
     }
 
 
@@ -36,7 +38,10 @@ class OrderController extends Controller
     }
 
     public function show($id){
-      return Order::find($id);
+      return Order::join('products', 'products.id', '=', 'orders.product_id')
+      -> orderBy('created_at', 'desc')
+      ->select('orders.*', 'products.name','products.slug','products.description','products.price','products.type','products.quantity','products.picture')
+      ->find($id);
     }
 
 
