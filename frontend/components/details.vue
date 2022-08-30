@@ -82,8 +82,11 @@
             </svg>
           </div>
 
-          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-            Add to Cart
+          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-500">
+            Ajouter au panier <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl  hover:bg-indigo-600 text-indigo-500 hover:text-white border-indigo-500 border-2	">
+            Acheter maintenant
           </button>
         </div>
       </div>

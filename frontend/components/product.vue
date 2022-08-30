@@ -49,11 +49,11 @@
                     </div>
                     <div class="flex p-4 border-t border-gray-300 text-gray-700">
                         <div class="flex-1 inline-flex items-center">
-                           <i class="fas fa-shopping-cart"></i>   <p class="ml-2 font-bold cursor-pointer">Panier</p>
+                           <a href="javascript:void(0)" class="ml-2 font-bold " @click="setproduct()">   <i class="fas fa-shopping-cart"></i> Panier</a>
                         </div>
                         <div class="flex-1 inline-flex items-center">
                         <Nuxt-link :to="'details/'+product.name+'/'+product.id ">
-                            <i class="fa fa-info-circle" aria-hidden="true"></i><a href="javascript:void(0)" class="ml-2 font-bold ">Details</a>
+                           <a href="javascript:void(0)" class="ml-2 font-bold "> <i class="fa fa-info-circle" aria-hidden="true"></i> Details</a>
                         </Nuxt-link>
                         </div>
                     </div>
@@ -86,6 +86,19 @@ import {computed} from 'vue';
             }
         },
         methods :{
+            
+            setproduct(){
+            //   localStorage.setItem('products', this.product)
+            var user1 = {"name":"user1"}; //Object1
+var user2 = {"name":"user2"}; //Object2
+var team = []; //array of objects
+team.push(user1);
+team.push(user2);
+var projects = [];
+projects.push(team);
+console.log(projects); 
+             },
+
              showfun(num,nom){
                  this.currentType = nom;
                this.showaction = num;

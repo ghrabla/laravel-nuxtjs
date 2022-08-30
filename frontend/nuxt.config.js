@@ -46,7 +46,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    // 'nuxt-vuex-localstorage'
+    'nuxt-vuex-localstorage'
     // 'vue-localstorage'
   ],
 

@@ -203,6 +203,9 @@ import {computed} from 'vue';
    },
   
    methods :{
+
+   
+
      showfun(num){
        this.showaction = num;
       //  this.showaction = !this.showaction;
