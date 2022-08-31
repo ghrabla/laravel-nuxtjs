@@ -4,7 +4,7 @@
   <div class="flex flex-wrap -mx-3 mb-6 ">
     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
-        Product Name
+        Produit Nom
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="form.name">
        <p class=" text-red-500 text-xs text-center" v-if="errors.name">
@@ -14,7 +14,7 @@
     </div>
     <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
-        Product Price
+        Produit Prix
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="form.price">
        <p class=" text-red-500 text-xs text-center" v-if="errors.price">
@@ -37,11 +37,20 @@
    <div class="flex flex-wrap -mx-3 mb-6">
   <div class="w-full px-3 mb-6 md:mb-0">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
-        picture
+        image
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="form.picture" >
        <p class=" text-red-500 text-xs text-center" v-if="errors.picture">
                                        {{ errors.picture.join(" ") }}
+      </p>
+    </div>
+  <div class="w-full px-3 my-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
+        la marque
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="form.company" >
+       <p class=" text-red-500 text-xs text-center" v-if="errors.company">
+                                       {{ errors.company.join(" ") }}
       </p>
     </div>
   </div>
@@ -97,6 +106,7 @@
                type : "",
                quantity : "",
                picture : "",
+               company : "",
                description : "",
                price : ""
 

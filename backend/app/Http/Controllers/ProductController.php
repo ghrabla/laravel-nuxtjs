@@ -37,6 +37,7 @@ class ProductController extends Controller
             'type' => 'required',
             'quantity' => 'required',
             'picture' => 'required',
+            'company' => 'required',
             // 'picture' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'description' => 'required',
             'price' => 'required',
@@ -56,6 +57,19 @@ class ProductController extends Controller
     {
         //
         return Product::find($id);
+    }
+    public function showone($id)
+    {
+        //
+        return Product::where('quantity','>',0)
+        ->find($id);
+    }
+
+    public function allproducts()
+    {
+        //
+        return Product::where('quantity','>',0)
+        ->get();
     }
 
     /**

@@ -64,12 +64,14 @@ Route::get('/users/search/{name}',[AuthController::class,'search']);
 // product routes
 Route::get('/products',[ProductController::class,'index']);
 Route::get('/products/{id}',[ProductController::class,'show']);
+Route::get('quant/products/{id}',[ProductController::class,'showone']);
+Route::get('quant/products',[ProductController::class,'allproducts']);
 Route::get('/products/search/{name}',[ProductController::class,'search']);
+Route::put('/products/{id}',[ProductController::class,'update']); 
 
 // protected routes
 Route::group(['middleware' => ['auth:sanctum']],function(){
   Route::post('/products',[ProductController::class,'store']);
-  Route::put('/products/{id}',[ProductController::class,'update']); 
   Route::delete('/products/{id}',[ProductController::class,'destroy']);
   Route::post('/logout',[AuthController::class,'logout']);
   Route::get('auth/user',[AuthController::class,'user']);

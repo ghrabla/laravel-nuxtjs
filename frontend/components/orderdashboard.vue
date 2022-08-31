@@ -116,6 +116,7 @@
             <tr v-for="order in orders" :key="order.id">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
+                  <Nuxt-link :to="'details/'+order.name+'/'+order.product_id ">
                   <div class="flex-shrink-0 w-10 h-10">
                     <img
                       class="w-full h-full rounded-full"
@@ -123,6 +124,7 @@
                       alt=""
                     />
                   </div>
+                  </Nuxt-link>
                   <div class="ml-3">
                     <p class="text-gray-900 whitespace-no-wrap font-bold">
                       {{order.fullname}}
@@ -170,8 +172,8 @@
                 <button class="font-bold text-xl" v-if="showaction==order" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
                <div class="flex flex-col gap-3" v-if="showaction==order">
-                  <button class="text-green-500 font-bold" @click="getorder(order.id)"><i class="fas fa-edit" ></i> Update</button>
-                  <button class="text-red-500 font-bold" @click="deleteorder(order.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                  <button class="text-green-500 font-bold" @click="getorder(order.id)"><i class="fas fa-edit" ></i> Editer</button>
+                  <button class="text-red-500 font-bold" @click="deleteorder(order.id)"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
               </div> 
             </tr>
           </tbody>

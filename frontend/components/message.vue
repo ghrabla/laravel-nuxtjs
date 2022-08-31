@@ -144,8 +144,8 @@
                  <button class="font-bold text-xl" v-if="showaction==message" @click="showaction=!showaction"><i class="fa-solid fa-xmark"></i></button>
               </td>
                <div class="flex flex-col gap-3" v-if="showaction==message">
-                  <button class="text-green-500 font-bold" @click="getmessage(message.id)"><i class="fas fa-edit" ></i> Update</button>
-                  <button class="text-red-500 font-bold" @click="deletemessage(message.id)"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                  <button class="text-green-500 font-bold" @click="getmessage(message.id)"><i class="fas fa-edit" ></i> Editer</button>
+                  <button class="text-red-500 font-bold" @click="deletemessage(message.id)"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</button>
               </div> 
             </tr>
           

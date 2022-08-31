@@ -90,7 +90,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
       </span>
-      <span>{{product.name}}</span>
+      <span>{{product.name}}/{{this.$route.params.id}}</span>
     </div>
   </div>
   <!-- ./ Breadcrumbs -->
@@ -109,8 +109,8 @@
         </div>
       </div>
       <div class="md:flex-1 px-4">
-        <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">Lorem ipsum dolor, sit amet consectetur, adipisicing elit.</h2>
-        <p class="text-gray-500 text-sm">By <a href="#" class="text-indigo-600 hover:underline">ABC Company</a></p>
+        <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">{{product.name}}.</h2>
+        <p class="text-gray-500 text-sm">La marque:  <a href="javascript:void(0)" class="text-indigo-600 hover:underline">{{product.company}}</a></p>
 
         <div class="flex items-center space-x-4 my-4">
           <div>
@@ -130,7 +130,7 @@
         <div class="flex py-4 space-x-4">
           <div class="relative">
             <div class="text-center left-0 my-8 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-            <input class="w-24 cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1" type="number" min="1" max="10" v-model="order.orderquant"/>
+            <input class="w-24 cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1" type="number" min="1" :max="product.quantity" v-model="order.orderquant" />
              
 
             <!-- <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -158,20 +158,35 @@ import NuxtLogo from './NuxtLogo.vue'
   components: { NuxtLogo },
     data(){
       return{
-        product : {},
+        product : {id:"",name:"",quantity:"",picture:"",type:"",description:"",price:""},
         order : {fullname:"" , adresse:"",city:"",postale:"",phone:"",email:"",orderquant:1,product_id:""},
         showform : false
       }
     },
     methods:{
      async fetchoneproduct(){
-       const response = await this.$axios.$get(`api/products/${this.$route.params.id}`)
+       const response = await this.$axios.$get(`api/quant/products/${this.$route.params.id}`)
        this.product = response
       //  if(this.product){
       //    }
       },
 
+     async updatequant(){
+        const res = await this.$axios.$put(`api/products/${this.$route.params.id}`,{
+          name:this.product.name,
+          slug:this.product.slug,
+          type:this.product.type,
+          quantity:this.product.quantity-this.order.orderquant,
+          picture:this.product.picture,
+          description:this.product.description,
+          price:this.product.price,
+        });
+      },
+
      async sendorder(){
+         if(this.order.orderquant>this.product.quantity){
+            Swal.fire('pardon!','la quantity est plus grand')
+         }else{
         const response = await this.$axios.$post('api/orders',{
         fullname:this.order.fullname , 
         adresse:this.order.adresse,
@@ -180,9 +195,13 @@ import NuxtLogo from './NuxtLogo.vue'
         phone:this.order.phone,
         email:this.order.email,
         orderquant:this.order.orderquant,
-        product_id:this.$route.params.id
+        product_id:this.$route.params.id 
         });
+        this.updatequant();
+        this.fetchoneproduct();
+        this.showform=false
         Swal.fire('merci','votre ordre est recorder')
+         }
         // console.log(response);
       }
       // checkid(){

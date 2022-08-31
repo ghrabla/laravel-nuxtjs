@@ -105,7 +105,7 @@ console.log(projects);
 
             },
              async fetchproducts() {
-             const response = await this.$axios.$get('api/products')
+             const response = await this.$axios.$get('api/quant/products')
              this.products = response
              console.log(this.products)
            },

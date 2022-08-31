@@ -38,6 +38,12 @@
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="product.picture">
     </div>
+  <div class="w-full px-3 my-6 md:mb-0">
+      <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
+        la marque
+      </label>
+      <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="text" v-model="product.company">
+    </div>
   </div>
   <div class="flex -mx-3 mb-2">
     
@@ -89,7 +95,7 @@
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
               >
-                Produit/ID 
+                Produit/marque
               </th>
               <th
                 class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider"
@@ -115,6 +121,7 @@
             <tr  v-for="product in products" :key="product.id">
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <div class="flex">
+                  <Nuxt-link :to="'details/'+product.name+'/'+product.id ">
                   <div class="flex-shrink-0 w-10 h-10">
                     <img
                       class="w-full h-full rounded-full"
@@ -122,11 +129,12 @@
                       alt=""
                     />
                   </div>
+                  </Nuxt-link>
                   <div class="ml-3">
                     <p class="text-gray-900 whitespace-no-wrap font-bold">
                       {{product.name}}
                     </p>
-                    <p class="text-gray-600 whitespace-no-wrap">{{product.id}}</p>
+                    <p class="text-gray-600 whitespace-no-wrap">{{product.company}}</p>
                   </div>
                 </div>
               </td>
