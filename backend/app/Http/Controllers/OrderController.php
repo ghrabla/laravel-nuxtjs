@@ -31,6 +31,7 @@ class OrderController extends Controller
         'city' => 'required',
         'postale' => 'required',
         'phone' => 'required',
+        'orderquant' => 'required',
         'product_id' => 'required'
       ]); 
 

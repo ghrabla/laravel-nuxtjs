@@ -58,12 +58,12 @@
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.orderquant">
       <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
     </div>
-    <div class="w-full md:w-1/2 px-3">
+    <!-- <div class="w-full md:w-1/2 px-3">
       <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-last-name">
         ordre prix
       </label>
       <input class="appearance-none block w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" v-model="order.price*order.orderquant">
-    </div>
+    </div> -->
   </div>
   <div class="p-2 w-full">
     <a class="flex mx-auto text-white bg-blue-700 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg cursor-pointer" @click="updateorder(order.id)">Editer </a>

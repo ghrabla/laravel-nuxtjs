@@ -116,7 +116,7 @@
           <div>
             <div class="rounded-lg bg-gray-100 flex py-2 px-3">
               <span class="text-indigo-400 mr-1 mt-1">DH</span>
-              <span class="font-bold text-indigo-600 text-3xl">{{product.price}}</span>
+              <span class="font-bold text-indigo-600 text-3xl">{{product.price*order.orderquant}}.00</span>
             </div>
           </div>
           <div class="flex-1">
@@ -129,18 +129,13 @@
 
         <div class="flex py-4 space-x-4">
           <div class="relative">
-            <div class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
-            <select class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+            <div class="text-center left-0 my-8 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">Qty</div>
+            <input class="w-24 cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1" type="number" min="1" max="10" v-model="order.orderquant"/>
+             
 
-            <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <!-- <svg class="w-5 h-5 text-gray-400 absolute right-0 bottom-0 mb-2 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
-            </svg>
+            </svg> -->
           </div>
 
           <button type="button" class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-500">
@@ -164,7 +159,7 @@ import NuxtLogo from './NuxtLogo.vue'
     data(){
       return{
         product : {},
-        order : {fullname:"" , adresse:"",city:"",postale:"",phone:"",email:"",product_id:""},
+        order : {fullname:"" , adresse:"",city:"",postale:"",phone:"",email:"",orderquant:1,product_id:""},
         showform : false
       }
     },
@@ -178,9 +173,17 @@ import NuxtLogo from './NuxtLogo.vue'
 
      async sendorder(){
         const response = await this.$axios.$post('api/orders',{
-        fullname:this.order.fullname , adresse:this.order.adresse,city:this.order.city,postale:this.order.postale,phone:this.order.phone,email:this.order.email,product_id:this.$route.params.id
+        fullname:this.order.fullname , 
+        adresse:this.order.adresse,
+        city:this.order.city,
+        postale:this.order.postale,
+        phone:this.order.phone,
+        email:this.order.email,
+        orderquant:this.order.orderquant,
+        product_id:this.$route.params.id
         });
-        console.log(response);
+        Swal.fire('merci','votre ordre est recorder')
+        // console.log(response);
       }
       // checkid(){
       //   if (this.product.id!=this.$route.params.id){

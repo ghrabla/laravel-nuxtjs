@@ -17,6 +17,7 @@ class Order extends Model
       'postale',
       'phone',
       'email',
+      'orderquant',
       'product_id'
 
     ];
