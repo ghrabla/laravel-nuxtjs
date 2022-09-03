@@ -49,7 +49,7 @@
                     </div>
                     <div class="flex p-4 border-t border-gray-300 text-gray-700">
                         <div class="flex-1 inline-flex items-center">
-                           <a href="javascript:void(0)" class="ml-2 font-bold " @click="setproduct()">   <i class="fas fa-shopping-cart"></i> Panier</a>
+                           <a href="javascript:void(0)" class="ml-2 font-bold " @click="setproduct(product.id)">   <i class="fas fa-shopping-cart"></i> Panier</a>
                         </div>
                         <div class="flex-1 inline-flex items-center">
                         <Nuxt-link :to="'details/'+product.name+'/'+product.id ">
@@ -87,9 +87,9 @@ import {computed} from 'vue';
         },
         methods :{
             
-            setproduct(){
-              localStorage.setItem('products', this.products)
-              console.log(localStorage.getItem('products'));
+            setproduct(id){
+              localStorage.setItem('productid', id)
+              console.log(localStorage.getItem('productid'));
 //             var user1 = {"name":"user1"}; //Object1
 // var user2 = {"name":"user2"}; //Object2
 // var team = []; //array of objects

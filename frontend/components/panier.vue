@@ -73,7 +73,21 @@
 </template>
 <script>
 export default {
-
+    data(){
+      return{
+        products:[],
+        product:{}
+      }
+    },
+    methods:{
+     async getproduct(){
+       const res = await this.$axios.$get('api/products/'+localStorage.getItem('productid'))
+       console.log(res)
+     }
+    },
+    created(){
+     this.getproduct();
+    }
 }
 </script>
 <style>
