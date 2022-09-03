@@ -88,15 +88,16 @@ import {computed} from 'vue';
         methods :{
             
             setproduct(){
-            //   localStorage.setItem('products', this.product)
-            var user1 = {"name":"user1"}; //Object1
-var user2 = {"name":"user2"}; //Object2
-var team = []; //array of objects
-team.push(user1);
-team.push(user2);
-var projects = [];
-projects.push(team);
-console.log(projects); 
+              localStorage.setItem('products', this.products)
+              console.log(localStorage.getItem('products'));
+//             var user1 = {"name":"user1"}; //Object1
+// var user2 = {"name":"user2"}; //Object2
+// var team = []; //array of objects
+// team.push(user1);
+// team.push(user2);
+// var projects = [];
+// projects.push(team);
+// console.log(projects); 
              },
 
              showfun(num,nom){
